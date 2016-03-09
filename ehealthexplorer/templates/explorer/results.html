@@ -1,0 +1,16 @@
+{% extends 'explorer/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Results{% endblock %}
+
+{% block body_block %}
+    {% if results %}
+        <ul>
+        {% for result in results %}
+            <li><a href="{{ result.url }}">{{ result.title }}</a></li>
+        {% endfor %}
+    {% else %}
+        <h3>No results for this search</h3>
+    {% endif %}
+{% endblock %}
