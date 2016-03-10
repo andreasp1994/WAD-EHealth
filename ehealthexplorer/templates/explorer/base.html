@@ -57,10 +57,12 @@
     <!-- Sidebar and Content - 2 column layout  -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-8 col-md-9  main">
-           <div>
-                {% block body_block %} MAIN CONTENT{% endblock %}
-                </div>
+        <div class="col-sm-8 col-md-9 vcenter">
+
+                {% block body_block %}
+                    <div style="background-color: #888888">MAIN CONTENT</div>
+                {% endblock %}
+
         </div>
 
         <div class="col-sm-4 col-md-3 sidebar">
