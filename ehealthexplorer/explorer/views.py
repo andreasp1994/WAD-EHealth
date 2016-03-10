@@ -8,7 +8,7 @@ def index(request):
     response = render(request,'explorer/index.html', context_dict)
 
     return response
-    
+
 def results(request):
     bing_results=[{'title':'Google',
                    'url':'http://www.google.co.uk',
@@ -29,6 +29,10 @@ def results(request):
                   'healthFinder':healthFinder_results 
                  } ## Placeholder until search function can be implemented
     
+
     response = render(request,'explorer/results.html',context_dict)   
     return response
    
+
+
+
