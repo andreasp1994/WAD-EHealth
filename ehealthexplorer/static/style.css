@@ -81,8 +81,9 @@ a.glyphicon {
 
 
 .vcenter {
+    margin-top: 22%;
   position: absolute;
-    top: 40%;
+
     height: 30%;
 }
 
