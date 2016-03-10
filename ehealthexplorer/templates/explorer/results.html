@@ -17,11 +17,15 @@
         <div id="results" class="tab-pane fade in active">
             <h3>All results</h3>
             {% if results %}
-                <ul>
-                {% for result in results %}
-                <li><a href="{{ result.url }}">{{ result.title }}</a></li>
-                {% endfor %}
-                </ul>
+                <h4>
+                    <ol>
+                    {% for result in results %}
+                        <li><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
+                            <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
+                        </li>
+                    {% endfor %}
+                    </ol>
+                </h4>
             {% else %}
                 <h5>No results for this search</h5>
             {% endif %}
@@ -30,11 +34,15 @@
         <div id="bing" class="tab-pane fade">
             <h3>Bing</h3>
             {% if bing %}
-                <ul>
-                {% for result in bing %}
-                    <li><a href="{{ result.url }}">{{ result.title }}</a></li>
-                {% endfor %}
-                </ul>
+                <h4>
+                    <ol>
+                    {% for result in bing %}
+                        <li><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
+                            <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
+                        </li>
+                    {% endfor %}
+                    </ol>
+                </h4>
             {% else %}
                 <h5>No Bing results for this search</h5>
             {% endif %}
@@ -44,11 +52,15 @@
         
             <h3>MedLine</h3>
             {% if medLine %}
-                <ul>
-                {% for result in medLine %}
-                    <li><a href="{{ result.url }}">{{ result.title }}</a></li>
-                {% endfor %}
-                </ul>
+                <h4>
+                    <ol>
+                    {% for result in medLine %}
+                        <li><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
+                            <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
+                        </li>
+                    {% endfor %}
+                    </ol>
+                </h4>
             {% else %}
                 <h5>No MedLine results for this search</h5>
             {% endif %}
@@ -58,11 +70,15 @@
         
             <h3>HealthFinder</h3>
             {% if healthFinder %}
-                <ul>
-                {% for result in healthFinder %}
-                    <li><a href="{{ result.url }}">{{ result.title }}</a></li>
-                {% endfor %}
-                </ul>
+                <h4>
+                    <ol>
+                    {% for result in healthFinder %}
+                        <li><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
+                            <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
+                        </li>
+                    {% endfor %}
+                    </ol>
+                </h4>
             {% else %}
                 <h5>No HealthFinder results for this search</h5>
             {% endif %}
@@ -77,4 +93,11 @@
         - HealthFinder only
         - Bing search only
     These should come from the context dict seperately?
+    For the moment they are. 
  -->
+ 
+{% block side_block %}
+
+    
+ 
+{% endblock %}
