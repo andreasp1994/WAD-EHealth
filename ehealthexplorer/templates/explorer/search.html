@@ -3,8 +3,9 @@
 {% load staticfiles %}
 
 {% block body_block %}
-<div class="vcenter">
-	<div class="row" >
+
+
+	<div class="vcenter row" >
         <div class="col-md-6 right">
     		<h2>Search</h2>
             <div id="custom-search-input">
@@ -14,12 +15,12 @@
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </span>
-                    <input type="text" class="form-control input-lg" placeholder="Buscar" />
+                    <input id="search_box" type="text" class="form-control input-lg" placeholder="Search..." />
 
                 </div>
             </div>
         </div>
 	</div>
-</div>
+
 
 {% endblock %}
