@@ -5,12 +5,76 @@
 {% block title %}Results{% endblock %}
 
 {% block body_block %}
-    {% if results %}
-        <ul>
-        {% for result in results %}
-            <li><a href="{{ result.url }}">{{ result.title }}</a></li>
-        {% endfor %}
-    {% else %}
-        <h3>No results for this search</h3>
-    {% endif %}
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#results">Results</a></li>
+        <li><a data-toggle="tab" href="#bing">Bing</a></li>
+        <li><a data-toggle="tab" href="#medLine">MedLine</a></li>
+        <li><a data-toggle="tab" href="#healthFinder">HealthFinder</a></li>
+    </ul>
+    
+    <div class="tab-content">
+        <div id="results" class="tab-pane fade in active">
+            <h3>All results</h3>
+            {% if results %}
+                <ul>
+                {% for result in results %}
+                <li><a href="{{ result.url }}">{{ result.title }}</a></li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <h5>No results for this search</h5>
+            {% endif %}
+        </div>
+        
+        <div id="bing" class="tab-pane fade">
+            <h3>Bing</h3>
+            {% if bing %}
+                <ul>
+                {% for result in bing %}
+                    <li><a href="{{ result.url }}">{{ result.title }}</a></li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <h5>No Bing results for this search</h5>
+            {% endif %}
+        </div>
+        
+        <div id="medLine" class="tab-pane fade">
+        
+            <h3>MedLine</h3>
+            {% if medLine %}
+                <ul>
+                {% for result in medLine %}
+                    <li><a href="{{ result.url }}">{{ result.title }}</a></li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <h5>No MedLine results for this search</h5>
+            {% endif %}
+        </div>
+        
+        <div id="healthFinder" class="tab-pane fade">
+        
+            <h3>HealthFinder</h3>
+            {% if healthFinder %}
+                <ul>
+                {% for result in healthFinder %}
+                    <li><a href="{{ result.url }}">{{ result.title }}</a></li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <h5>No HealthFinder results for this search</h5>
+            {% endif %}
+        </div>
+    </div>
+    
 {% endblock %}
+
+<!-- Need to display items in four tabs:
+        - All engines
+        - MedLine only
+        - HealthFinder only
+        - Bing search only
+    These should come from the context dict seperately?
+ -->

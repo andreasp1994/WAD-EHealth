@@ -10,6 +10,12 @@ def index(request):
     return response
     
 def results(request):
-    context_dict={'results':[{'title':'google','url':'http://www.google.co.uk'}]}   ## Placeholder until search function
-    response = render(request,'explorer/results.html',context_dict)                 ## can be used.
+    context_dict={'results':[{'title':'Google','url':'http://www.google.co.uk'},{'title':'Amazon','url':'http://www.amazon.co.uk'}], ## Do we need this? hmm
+                  'bing':[{'title':'Google','url':'http://www.google.co.uk'}],
+                  'medLine':[{'title':'Amazon','url':'http://www.amazon.co.uk'}],
+                  'healthFinder':{} 
+                 } ## Placeholder until search function can be implemented
+    
+    response = render(request,'explorer/results.html',context_dict)      ## can be used.
+    
     return response
