@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from explorer.bing_search import run_query
 
 # Create your views here.
 def index(request):
@@ -10,12 +11,18 @@ def index(request):
     return response
 
 def results(request):
-    bing_results=[{'title':'Google',
-                   'url':'http://www.google.co.uk',
-                   'summary':'A search engine for searching things',
-                   'read':9,
-                   'pola':5,
-                   'subj':3}]
+    # bing_results=[{'title':'Google',
+                   # 'url':'http://www.google.co.uk',
+                   # 'summary':'A search engine for searching things',
+                   # 'read':9,
+                   # 'pola':5,
+                   # 'subj':3}]
+    bing_results=[]
+    
+    query = 'flu'.strip()       ## PLACEHOLDER todo
+    
+    if query:
+        bing_results= run_query(query)
     medLine_results=[{'title':'Amazon',
                       'url':'http://www.amazon.co.uk',
                       'summary':'A place to buy stuff',
