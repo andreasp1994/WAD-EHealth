@@ -4,8 +4,9 @@
 
 {% block body_block %}
 
-	<div class="row" >
-        <div class="col-md-6 right"">
+
+	<div class="vcenter row" >
+        <div class="col-md-6 right">
     		<h2>Search</h2>
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
@@ -14,11 +15,12 @@
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </span>
-                    <input type="text" class="form-control input-lg" placeholder="Buscar" />
+                    <input id="search_box" type="text" class="form-control input-lg" placeholder="Search..." />
 
                 </div>
             </div>
         </div>
 	</div>
+
 
 {% endblock %}
