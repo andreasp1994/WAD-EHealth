@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}style.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/ajax.js"></script>
     {%  block javascript_files %}
 
     {% endblock %}
@@ -48,8 +49,9 @@
                         <ul class="dropdown-menu main-menu">
                             <li><a href="#" data-link="{% url 'search_sidebar' %}">Search</a></li>
                             <li class="divider"></li>
+                            <li><a href="#" data-link="{%  url 'favourites_sidebar' %}">Favourites</a></li>
                             {% if user.is_authenticated %}
-                                <li>><a href="#" data-link="{%  url 'favourites_sidebar' %}">Favourites</a></li>
+                                <li><a href="#" data-link="{%  url 'favourites_sidebar' %}">Favourites</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#">History</a></li>
                                 <li class="divider"></li>

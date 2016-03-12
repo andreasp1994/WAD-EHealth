@@ -1,9 +1,6 @@
 {% extends 'explorer/search.html' %}
 
-{%  block javascript_files %}
-    <script src="{{ STATIC_URL }}js\input-script.js"></script>
-    <script src="{{ STATIC_URL }}js\ajax.js"></script>
-{% endblock %}
+{% load staticfiles %}
 
 {% block side_block %}
     {%  include 'explorer/search_sidebar.html' %}
