@@ -56,4 +56,19 @@ def search_sidebar(request):
 
     return response
 
+def history_sidebar(request):
+
+    context_dict = {}
+
+    response = render(request, 'explorer/history_sidebar.html', context_dict)
+
+    return response
+
+def profile_sidebar(request):
+
+    context_dict ={}
+
+    response = render(request, 'explorer/profile_sidebar.html', context_dict)
+
+    return response
 
