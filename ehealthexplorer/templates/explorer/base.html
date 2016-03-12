@@ -44,9 +44,9 @@
             <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-menu-hamburger"></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Search</a></li>
-                            <li><a href="#">Another action</a></li>
+                        <ul class="dropdown-menu main-menu">
+                            <li><a href="#" data-link="sidebar/search">Search</a></li>
+                            <li><a href="#" data-link="sidebar/favourites">Favourites</a></li>
                             <li class="divider"></li>
                             <li><a href="#">And yet.. another action</a></li>
                         </ul>
@@ -63,15 +63,16 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-8 col-md-9">
-
                 {% block body_block %}
                     MAIN CONTENT
                 {% endblock %}
 
         </div>
 
-        <div class="col-sm-4 col-md-3 sidebar">
-                {% block side_block %} SIDE BAR CONTENT{% endblock %}
+        <div class="col-sm-4 col-md-3 sidebar" id="sidebar" >
+                {% block side_block %}
+                    SIDE BAR CONTENT
+                {% endblock %}
 
         </div>
 

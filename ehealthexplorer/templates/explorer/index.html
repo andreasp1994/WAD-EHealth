@@ -1,53 +1,10 @@
 {% extends 'explorer/search.html' %}
 
 {%  block javascript_files %}
-    <script src="{{ STATIC_URL }}input-script.js"></script>
+    <script src="{{ STATIC_URL }}js\input-script.js"></script>
+    <script src="{{ STATIC_URL }}js\ajax.js"></script>
 {% endblock %}
 
 {% block side_block %}
-
-    <div class="row stretch">
-
-        <div class="predefined-terms-info">
-             <span id="test" class="glyphicon glyphicon-question-sign"> <span class="popup" ><strong>Click on one of the predefined terms below <br />
-        to include it in your query.</strong></span> </span>
-
-        </div>
-
-        <div class="col-xs-6 col-md-6 vertical-center"> <!-- required for floating -->
-        <!-- Nav tabs -->
-        <ul class="predefined-search-tabs">
-            <li><a  href="#treatments" data-toggle="tab">Treatments</a></li>
-            <li class="active"><a href="#medicines" data-toggle="tab">Medicines</a></li>
-            <li><a href="#symptoms" data-toggle="tab">Symptoms</a></li>
-        </ul>
-        </div>
-
-        <div class="vdivider"></div>
-
-        <div class="row stretch">
-            <div class="col-xs-offset-6 col-xs-6 col-md-offset-6 col-md-6 vertical-center ">
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div class="tab-pane" id="treatments">
-                        <ul class="predefined-search-tabs">
-                            <li><a  href="#">treatment1</a></li>
-                            <li><a href="#">treatment2</a></li>
-                            <li><a href="#">treatment3</a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane active" id="medicines">
-                        <ul class="predefined-search-tabs">
-                            <li><a  href="#">medicine1</a></li>
-                            <li><a href="#">medicine2</a></li>
-                            <li><a href="#">medicine3</a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane" id="messages">Messages Tab.</div>
-                </div>
-            </div>
-        </div>
-    </div><!-- /row -->
-
+    {%  include 'explorer/search_sidebar.html' %}
 {% endblock %}
-

@@ -4,4 +4,5 @@ $(document).ready(function () {
         $("#search_box").val($("#search_box").val() + $(e.target).text() + " ");
     }
     );
+
 });
