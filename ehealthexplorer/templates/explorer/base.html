@@ -44,16 +44,25 @@
             <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-menu-hamburger"></a>
+
                         <ul class="dropdown-menu main-menu">
                             <li><a href="#" data-link="sidebar/search">Search</a></li>
-                            <li><a href="#" data-link="sidebar/favourites">Favourites</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">And yet.. another action</a></li>
+                            {% if user.is_authenticated %}
+                                <li>><a href="#" data-link="sidebar/favourites">Favourites</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">History</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="{% url 'auth_login' %}">Log out</a></li>
+                            {% else %}
+                                <li><a href="{% url 'auth_login' %}">Log in!</a></li>
+                            {% endif %}
                         </ul>
                     </li>
             </ul>
 
-             <p class="navbar-right navbar-text top-text"> Hello User! Sign in or Register.</p>
+             <p class="navbar-right navbar-text top-text"> Hello User! Sign in or <a href="{% url 'registration_register' %}">Register.</a></p>
 
         </div>
       </div>

@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'explorer',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -48,6 +49,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+REGISTRATION_OPEN = True
 
 ROOT_URLCONF = 'ehealthexplorer.urls'
 
