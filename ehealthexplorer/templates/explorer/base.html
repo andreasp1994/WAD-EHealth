@@ -54,12 +54,16 @@
                             <li><a href="#" data-link="{% url 'history_sidebar' %}">History</a></li>
                             <li class="divider"></li>
                             <li><a href="#" data-link="{% url 'profile_sidebar' %}">MyProfile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-link="{% url 'settings_sidebar' %}">Settings</a></li>
                             {% if user.is_authenticated %}
                                 <li><a href="#" data-link="{%  url 'favourites_sidebar' %}">Favourites</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#" data-link="{% url 'history_sidebar' %}">History</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#" data-link="{% url 'profile_sidebar' %}">MyProfile</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" data-link="{% url 'settings_sidebar' %}">Settings</a></li>
                                 <li><a href="{% url 'auth_login' %}">Log out</a></li>
                             {% else %}
                                 <li><a href='#' data-link="{% url 'auth_login' %}">Log in!</a></li>

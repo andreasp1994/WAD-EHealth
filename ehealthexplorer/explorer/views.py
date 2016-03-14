@@ -72,3 +72,11 @@ def profile_sidebar(request):
 
     return response
 
+def settings_sidebar(request):
+
+    context_dict = {}
+
+    response = render(request, 'explorer/settings_sidebar.html', context_dict)
+
+    return response
+

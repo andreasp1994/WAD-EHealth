@@ -1,0 +1,23 @@
+<link href="{{ STATIC_URL }}bootstrap-editable/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+<script src="{{ STATIC_URL }}bootstrap-editable/bootstrap3-editable/js/bootstrap-editable.js"></script>
+
+<img src="{{ STATIC_URL }}img/user.png" width="200" height="200">
+
+<p>Change Avatar</p>
+
+<p>Name</p> <span class="to-edit">UserName</span>
+
+<p>Surname</p>  <span class="to-edit">UserSurname</span>
+
+<p>Email</p> <span class="to-edit">someone@example.com</span>
+
+<button id="edit">Change</button>
+
+<script>
+    $(document).ready(function (){
+        $('#edit').click(function (){
+            $.fn.editable.defaults.mode = 'inline';
+            $('.to-edit').editable();
+        });
+    });
+</script>
