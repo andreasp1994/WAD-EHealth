@@ -15,6 +15,127 @@ ul {
     transform: translateY(-50%);
 }
 
+#sidebar {
+    background-color: rgba(250,250,250,0.7);
+}
+
+#main {
+    position: fixed;
+    top: 51px;
+    left: 0;
+    bottom: 0;
+    padding: 0px;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: rgba(0,0,0,0.5);
+}
+/***************************
+Favourites List Styling
+***************************/
+
+.fav-container {
+    padding: 10px;
+}
+
+ul.cat-list {
+    width:100%;
+    list-style:none;
+    text-align:center;
+}
+
+ul.cat-list li {
+
+}
+
+ul.cat-list > li{
+  margin-bottom:15px;
+}
+
+ul.cat-list div{
+    height: 60px;
+}
+
+span.cat-expand {
+    float: right;
+    font-size: 20px;
+    color: black;
+    transition: 0.4s;
+}
+
+.cat-list div {
+    display: block;
+}
+
+ul.cat-list li > span{
+    background-color: #e1e1e1;
+    margin: 0 auto;
+    border-radius: 20px;
+    display:block;
+    clear:both;
+    padding:10px 20px;
+    transition: 0.4s;
+    text-align: left;
+    font-size: 18px;
+}
+
+ul.cat-list li > span:hover span.cat-expand {
+    color: white;
+}
+
+ul.cat-list li span:hover{
+    background-color: #31b0d5;
+    color: white;
+    font-size: 20px;
+}
+
+ul.fav-list{
+    padding: 10px;
+}
+
+ul.cat-list ul.fav-list li{
+
+    height: 70px;
+    float:left;
+    width:70px;
+    margin: 10px;
+
+}
+
+ul.cat-list li a{
+  background:#5A9BD5;
+  display:block;
+  width:100%;
+  padding:25px 0;
+  text-decoration:none;
+  transition: 0.4s;
+}
+
+ul.cat-list li a:hover{
+  background:#cf5;
+}
+
+.block {
+    display: block;
+}
+
+.search-vertical-align {
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.col-centered{
+    display:block;
+    float: none;
+    margin: 0 auto;
+}
+
+/**************************
+End of favourites styling
+**************************/
+
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
@@ -81,7 +202,7 @@ a.tooltip span.popup{
 }
 
 a.tooltip:hover span.popup{
-  display: block; position: absolute; width: 200px; background: #aaa url(images/horses200x50.jpg); height: 50px; left: 100px; top: -10px; color: #FFFFFF; padding: 0 5px;
+  display: block; position: absolute; width: 200px; background: #aaa; height: 50px; left: 100px; top: -10px; color: #FFFFFF; padding: 0 5px;
 }
 
 
@@ -129,8 +250,12 @@ End of bootstrap overwrite
 /*****************
 Search styling
 ******************/
+.search-text{
+    color: #f1f1f1;
+}
+
 #custom-search-input{
-    border: solid 1px #E4E4E4;
+
     border-radius: 6px;
     background-color: #fff;
 }
@@ -144,7 +269,7 @@ Search styling
     width: 100px;
     box-shadow: none;
     border: 0;
-    color: #666666;
+    color: #ffffff;
     border-left: solid 1px #ccc;
 }
 
@@ -162,10 +287,6 @@ Search styling
 End of serch styling
 **********************/
 
-.vertical-align {
-    display: flex;
-    align-items: center;
-}
 
 .light_gg {
   line-height: 100%;
@@ -191,3 +312,9 @@ End of serch styling
     float:right;
 }
 
+#results-container {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+}

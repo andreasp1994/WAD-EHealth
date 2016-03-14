@@ -80,3 +80,10 @@ def settings_sidebar(request):
 
     return response
 
+def login_sidebar(request):
+
+    context_dict={}
+
+    response = render(request, 'explorer/login_sidebar.html', context_dict)
+
+    return response

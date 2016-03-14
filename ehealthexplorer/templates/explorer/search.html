@@ -5,22 +5,30 @@
 {% block body_block %}
 
 
-	<div class="vcenter row" >
-        <div class="col-md-6 right">
-    		<h2>Search</h2>
+	<div class="row " >
+
+
+        <div class="col-md-6 search-vertical-align">
+    		<h2 class="search-text">Search</h2>
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
                     <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
+                         <form class="form-inline" id="search_form" method="post" action="{% url 'results' %}">
+                             {% csrf_token %}
+                             <button class="btn btn-info btn-lg" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                             </button>
+                         </form>
+
                     </span>
                     <input id="search_box" type="text" class="form-control input-lg" placeholder="Search..." />
 
                 </div>
             </div>
         </div>
+
 	</div>
+
 
 
 {% endblock %}
