@@ -9,10 +9,12 @@
 
     <link rel="stylesheet" href="{{ STATIC_URL }}style.css" />
 
+    <script language="javascript">var STATIC_URL = "{{ STATIC_URL }}";</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.backstretch.min.js"></script>
+
     <script src="{{ STATIC_URL }}js/ajax.js"></script>
     {%  block javascript_files %}
-
     {% endblock %}
 
     <!--[if lt IE 9]>
@@ -39,8 +41,6 @@
           <a class="navbar-brand" href="/explorer/">Federated e-Health Search</a>
         </div>
         <div class="navbar-collapse collapse">
-
-
 
             <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -75,9 +75,11 @@
     </div>
 
     <!-- Sidebar and Content - 2 column layout  -->
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col-sm-8 col-md-9">
+
+
+        <div class="col-sm-8 col-md-9" id="main">
                 {% block body_block %}
                     MAIN CONTENT
                 {% endblock %}
@@ -91,10 +93,22 @@
 
         </div>
 
+        </div>
       </div>
     </div>
 
+    <script>
 
+        $('.main-menu li a').click(function () {
+           var img =  Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+            var url = STATIC_URL + "backgrounds/" + img + ".png";
+            $.backstretch(url, {fade:1000});
+        });
+      // To attach Backstrech as the body's background
+      $.backstretch(STATIC_URL + "backgrounds/1.png", {fade:1000});
+
+
+    </script>
 
      <!-- Bootstrap core JavaScript
     ================================================== -->
