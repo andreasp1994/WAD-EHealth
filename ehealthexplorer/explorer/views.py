@@ -12,19 +12,19 @@ def index(request):
 
     if request.method == "POST":
 
-        task = request.POST['task']
-
-        if (task == "AJAX_ADD_CATEGORY"):
-            cat_name = request.POST['name']
-            try:
-                cat = Category.objects.create(name=cat_name,user=None)
-            except Exception as e:
-                print e
+        task = request.POST.get('task',None)
+        if task != None:
+            if (task == "AJAX_ADD_CATEGORY"):
+                cat_name = request.POST['name']
+                try:
+                    cat = Category.objects.create(name=cat_name,user=None)
+                except Exception as e:
+                    print e
 
 
             # cat.save()
 
-        return HttpResponse(json.dumps({'message': task}))
+            return HttpResponse(json.dumps({'message': task}))
 
     #Load categories from database:
     category_list = Category.objects.all()
