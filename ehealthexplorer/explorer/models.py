@@ -33,6 +33,7 @@ class Page(models.Model):
     title = models.CharField(max_length=128)
     summary = models.CharField(max_length=300)
     url = models.URLField()
+
     flesch_score = models.IntegerField(default =0)
     polarity_score=models.IntegerField(default=0)
     subjectivity_score=models.IntegerField(default=0)

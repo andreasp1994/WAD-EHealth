@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    /*
+    Dynamic content switch
+     */
     $('.main-menu li a').click(function(e){
         $.get($(e.target).data('link')  , function(data) {
             temp = data;
@@ -13,4 +16,7 @@ $(document).ready(function () {
             $('#sidebar').html(temp);
         });
     });
+
 });
+
+
