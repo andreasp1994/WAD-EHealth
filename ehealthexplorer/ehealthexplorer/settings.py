@@ -51,6 +51,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 REGISTRATION_OPEN = True
+REGISTRATION_AUTO_LOGIN = True
 
 ROOT_URLCONF = 'ehealthexplorer.urls'
 
