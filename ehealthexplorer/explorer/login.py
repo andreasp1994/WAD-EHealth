@@ -20,7 +20,7 @@ def searcher_login(request):
 
                 context_dict={}
 
-                response = render(request, 'explorer/login_sidebar.html', context_dict)
+                response = render(request, 'explorer/../templates/registration/login.html', context_dict)
 
                 return response
             else:
@@ -38,7 +38,7 @@ def searcher_login(request):
     else:
             context_dict={}
 
-            response = render(request, 'explorer/login_sidebar.html', context_dict)
+            response = render(request, 'explorer/../templates/registration/login.html', context_dict)
 
             return response
 
