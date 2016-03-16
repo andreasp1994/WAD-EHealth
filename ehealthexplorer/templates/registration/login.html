@@ -1,4 +1,4 @@
-<form class="form-signin" role="form" method="post" action=".">
+<form class="form-signin" role="form" method="post" action="{% url 'auth_login' %}" enctype="multipart/form-data">
     {% csrf_token %}
 
     <h2 class="form-signin-heading">Please sign in</h2>
