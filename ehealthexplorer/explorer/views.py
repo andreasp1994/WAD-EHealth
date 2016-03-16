@@ -5,26 +5,26 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from models import Category
 
-@csrf_exempt
+
 def index(request):
 
     context_dict = {}
 
     if request.method == "POST":
-
-        task = request.POST.get('task',None)
-        if task != None:
-            if (task == "AJAX_ADD_CATEGORY"):
-                cat_name = request.POST['name']
-                try:
-                    cat = Category.objects.create(name=cat_name,user=None)
-                except Exception as e:
-                    print e
-
-
-            # cat.save()
-
-            return HttpResponse(json.dumps({'message': task}))
+        print "Post request"
+    #     task = request.POST.get('task',None)
+    #     if task != None:
+    #         if (task == "AJAX_ADD_CATEGORY"):
+    #             cat_name = request.POST['name']
+    #             try:
+    #                 cat = Category.objects.create(name=cat_name,user=None)
+    #             except Exception as e:
+    #                 print e
+    #
+    #
+    #         # cat.save()
+    #
+    #         return HttpResponse(json.dumps({'message': task}))
 
     #Load categories from database:
     category_list = Category.objects.all()

@@ -72,7 +72,13 @@
                     </li>
             </ul>
 
-             <p class="navbar-right navbar-text top-text"> Hello User! <a href="# " class="top-navigation-link" data-link="{% url 'auth_login' %}">Sign in</a> or <a href="# " class="top-navigation-link" data-link="{% url 'registration_register' %}">Register.</a></p>
+             <p class="navbar-right navbar-text top-text"> Hello
+                 {%  if user.is_authenticated %}
+                        {{ user.username }} <a href="# " class="top-navigation-link" data-link="{% url 'auth_logout' %}">Sign Out</a>
+                 {% else  %}
+                        User! <a href="# " class="top-navigation-link" data-link="{% url 'auth_login' %}">Sign in</a> or <a href="# " class="top-navigation-link" data-link="{% url 'registration_register' %}">Register.</a>
+                 {% endif %}
+                    </p>
 
         </div>
       </div>
