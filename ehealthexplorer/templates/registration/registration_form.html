@@ -1,5 +1,5 @@
 
-    <form role="form"  method="post" action=".">
+    <form role="form"  method="post" action="{% url 'registration_register' %} " enctype="multipart/form-data">
                 {% csrf_token %}
 
         <h2 class="form-signin-heading">Sign Up Here</h2>
