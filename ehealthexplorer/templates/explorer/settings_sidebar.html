@@ -1,15 +1,20 @@
 <link href="{{ STATIC_URL }}bootstrap-editable/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
 <script src="{{ STATIC_URL }}bootstrap-editable/bootstrap3-editable/js/bootstrap-editable.js"></script>
 
-<div id="settings-container">
-    <div class="img-container">
-    <img src="{{ STATIC_URL }}img/user.png" class="userimg">
-    <p>Change Avatar</p>
+<div class="container-fluid">
+    <img src="{{ STATIC_URL }}img/user.png" class="img-responsive userimg center-block">
+    </br>
+    <div class="span7 text-center">
+        <button class="btn btn-success">Change Avatar</button>
+
+        <div>
+            </br>
+            <p class="text-primary"><strong>Name:</strong> <span class="to-edit form-control form-group">UserName</span></p>
+            <p class="text-primary"><strong>Surname:</strong> <span class="to-edit form-control form-group">UserSurname</span></p>
+            <p class="text-primary"><strong>Email:</strong> <span class="to-edit form-control form-group">someone@example.com</span></p>
+            <button id="edit" class="btn btn-default">Change</button>
+        </div>
     </div>
-    <p>Name: <span class="to-edit form-control form-group">UserName</span></p>
-    <p>Surname: <span class="to-edit form-control form-group">UserSurname</span></p>
-    <p>Email: <span class="to-edit form-control form-group">someone@example.com</span></p>
-    <button id="edit" class="">Change</button>
 </div>
 <script>
     $(document).ready(function (){
