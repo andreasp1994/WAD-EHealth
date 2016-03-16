@@ -6,41 +6,36 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import get_user
 from models import Category
-from django.template import RequestContext
 
 @csrf_exempt
 def index(request):
 
     context_dict = {}
 
-    if request.method == "POST":
-        print "Post request"
-        task = request.POST.get('task',None)
-        if task != None:
-            if (task == "AJAX_ADD_CATEGORY"):
+    if request.user.is_authenticated():
+        if request.method == "POST":
+            print "Post request"
+            task = request.POST.get('task',None)
+            if task != None:
+                if (task == "AJAX_ADD_CATEGORY"):
+                    try:
+                        cat_name = request.POST['name']
+                        cat_name += str(Category.objects.filter(user=get_user(request)).count())
+                        searcher = get_user(request)
+                        cat = Category.objects.create(name=cat_name,user=searcher)
+                        cat.save()
+                    except Exception as e:
+                        print e
 
-                try:
-                    cat_name = request.POST['name']
-                    cat_name += str(Category.objects.filter(user=get_user(request)).count())
-                    searcher = get_user(request)
-                    cat = Category.objects.create(name=cat_name,user=searcher)
-                    cat.save()
-                except Exception as e:
-                    print e
+                return HttpResponse(json.dumps({'message': task}))
 
-            return HttpResponse(json.dumps({'message': task}))
+        #Load categories from database:
+        category_list = Category.objects.filter(user=get_user(request))
+        context_dict['categories'] = category_list
 
-    #Load categories from database:
-    category_list = Category.objects.filter(user=get_user(request))
-    context_dict['categories'] = category_list
-
-    context_dict["test"] = ["test1","test2"]
-    context_dict["m"]="masdasdada"
 
     response = render(request,'explorer/index.html', context_dict )
     return response
-
-
 
 
 def results(request):
@@ -80,8 +75,9 @@ def favourites_sidebar(request):
 
     context_dict={}
 
-    category_list = Category.objects.filter(user=get_user(request))
-    context_dict['categories'] = category_list
+    if request.user.is_authenticated():
+        category_list = Category.objects.filter(user=get_user(request))
+        context_dict['categories'] = category_list
 
     response = render(request, 'explorer/favourites_sidebar.html', context_dict)
 
