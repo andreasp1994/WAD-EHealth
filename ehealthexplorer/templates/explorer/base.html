@@ -45,20 +45,17 @@
             <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-menu-hamburger"></a>
-
                         <ul class="dropdown-menu main-menu">
                             <li><a href="#" data-link="{% url 'search_sidebar' %}">Search</a></li>
                             <li class="divider"></li>
                             {% if user.is_authenticated %}
                                 <li><a href="#" data-link="{%  url 'favourites_sidebar' %}">Favourites</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#" data-link="{% url 'history_sidebar' %}">History</a></li>
-                                <li class="divider"></li>
                                 <li><a href="#" data-link="{% url 'profile_sidebar' %}">MyProfile</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#" data-link="{% url 'settings_sidebar' %}">Settings</a></li>
                                 <li class="divider"></li>
-                                <li><a href="{% url 'auth_logout' %}">Log out</a></li>
+                                <li><a href="{% url 'auth_logout' %}?next=/explorer/">Log out</a></li>
                             {% else %}
                                 <li><a href='#' data-link="{% url 'auth_login' %}">Log in!</a></li>
                             {% endif %}
@@ -68,7 +65,7 @@
 
              <p class="navbar-right navbar-text top-text"> Hello
                  {%  if user.is_authenticated %}
-                        {{ user.username }} <a href="# " class="top-navigation-link" data-link="{% url 'auth_logout' %}">Sign Out</a>
+                        {{ user.username }}! <a href="{% url 'auth_logout' %}?next=/explorer/" class="top-navigation-link" data-link="">Sign Out</a>
                  {% else  %}
                         User! <a href="# " class="top-navigation-link" data-link="{% url 'auth_login' %}">Sign in</a> or <a href="# " class="top-navigation-link" data-link="{% url 'registration_register' %}">Register.</a>
                  {% endif %}

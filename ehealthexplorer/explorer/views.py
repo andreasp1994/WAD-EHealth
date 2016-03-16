@@ -21,7 +21,7 @@ def index(request):
                     try:
                         cat_name = request.POST['name']
                         cat_name += str(Category.objects.filter(user=get_user(request)).count())
-                        searcher = get_user(request)
+                        searcher = request.user
                         cat = Category.objects.create(name=cat_name,user=searcher)
                         cat.save()
                     except Exception as e:
@@ -30,7 +30,7 @@ def index(request):
                 return HttpResponse(json.dumps({'message': task}))
 
         #Load categories from database:
-        category_list = Category.objects.filter(user=get_user(request))
+        category_list = Category.objects.filter(user=request.user)
         context_dict['categories'] = category_list
 
 
