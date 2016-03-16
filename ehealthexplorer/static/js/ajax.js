@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     /*
     Dynamic content switch
      */

@@ -16,8 +16,9 @@ class Searcher(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=128, unique=True)
-    user = models.ForeignKey(Searcher)
+    user = models.ForeignKey(User)
     slug = models.SlugField()
+    id   = models.AutoField(primary_key=True)
 
     def save(self, *args, **kwargs):
         # Uncomment if you don't want the slug to change every time the name changes

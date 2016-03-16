@@ -1,13 +1,18 @@
 <script src="{{ STATIC_URL }}js/ajax-add-cat.js"></script>
-
 <div class="row fav-container">
     <div class="col-md-12">
 
+
+
+
         <ul class="cat-list">
-                    <li>
-                        <input type="checkbox" class="fav-check" id="cat1" />
-                        <label for="cat1">
-                            Category 1
+            {% if categories %}
+                    {% for category in categories %}
+
+                        <li>
+                        <input type="checkbox" class="fav-check" id="{{ category.id }}" />
+                        <label for="{{ category.id }}">
+                            {{ category.name }}
                             <span class="cat-expand">
                                 +
                             </span>
@@ -26,28 +31,15 @@
                             </ul>
                     </li>
 
+                    {% endfor %}
+
+            {% else %}
+                <strong>No Categories currently in category.</strong>
+
+                <br />
+            {% endif %}
 
 
-                    <li>
-                        <input type="checkbox" class="fav-check" id="cat2" />
-                        <label for="cat2">
-                            Category 2
-                            <span class="cat-expand">
-                                +
-                            </span>
-                        </label>
-
-                       <ul class="fav-list">
-                           <div class="col-md-12 col-centered">
-                            <li><a href="#">Topic 1</a></li>
-                            <li><a href="#">Topic 2</a></li>
-                            <li><a href="#">Topic 3</a></li>
-                            <li><a href="#">Topic 4</a></li>
-                            <li><a href="#">Topic 5</a></li>
-                            <li><a href="#">Topic 6</a></li>
-                               </div>
-                        </ul>
-                    </li>
 
                     <label id="add-cat" class="add-cat">
                             Add new category...
