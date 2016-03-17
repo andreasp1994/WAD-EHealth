@@ -44,9 +44,14 @@ def index(request):
                         cat.shared = True
                     else:
                         cat.shared = False
-
                     cat.save()
 
+                elif (task == "AJAX_RENAME_CATEGORY"):
+                    id = request.POST['id']
+                    new_name = request.POST['new_name']
+                    cat = Category.objects.filter(id=id).get()
+                    cat.name=new_name
+                    cat.save()
 
                 return HttpResponse(json.dumps({'message': task}))
 
