@@ -18,9 +18,10 @@ class Searcher(models.Model):
         return self.user.username
 
 class Category(models.Model):
-    name = models.CharField(max_length=128, unique=True)
-    user = models.ForeignKey(Searcher)
-    slug = models.SlugField()
+    name = models.CharField(max_length=128)
+    user = models.ForeignKey(User)
+    slug = models.SlugField(default="")
+    id = models.AutoField(primary_key=True)
 
     def save(self, *args, **kwargs):
         # Uncomment if you don't want the slug to change every time the name changes
@@ -36,7 +37,7 @@ class Page(models.Model):
     category = models.ForeignKey(Category)
     title = models.CharField(max_length=128)
     summary = models.CharField(max_length=300)
-    url = models.URLField()
+    url = models.URLField(default="")
 
     flesch_score = models.IntegerField(default =0)
     polarity_score=models.IntegerField(default=0)

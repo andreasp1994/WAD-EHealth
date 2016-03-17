@@ -15,9 +15,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(unique=True, max_length=128)),
-                ('slug', models.SlugField()),
+                ('name', models.CharField(max_length=128)),
+                ('slug', models.SlugField(default=b'')),
+                ('id', models.AutoField(serialize=False, primary_key=True)),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
             options={
             },
@@ -29,7 +30,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=128)),
                 ('summary', models.CharField(max_length=300)),
-                ('url', models.URLField()),
+                ('url', models.URLField(default=b'')),
                 ('flesch_score', models.IntegerField(default=0)),
                 ('polarity_score', models.IntegerField(default=0)),
                 ('subjectivity_score', models.IntegerField(default=0)),
@@ -49,11 +50,5 @@ class Migration(migrations.Migration):
             options={
             },
             bases=(models.Model,),
-        ),
-        migrations.AddField(
-            model_name='category',
-            name='user',
-            field=models.ForeignKey(to='explorer.Searcher'),
-            preserve_default=True,
         ),
     ]

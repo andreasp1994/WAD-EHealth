@@ -10,8 +10,12 @@ $(document).ready(function () {
                 task:"AJAX_ADD_CATEGORY",
                 csrfmiddlewaretoken:'{{ csrf_token }}'
              },
-            function(data,status){
-              alert("Data: " + data + "\nStatus: " + status);
+            function(){
+
+                $.get('/explorer/sidebar/favourites/'  , function(data) {
+                temp = data;
+                $('#sidebar').html(temp);
+                });
             })
             .fail(function(xhr) {
                 console.log("Error: " + xhr.statusText);
