@@ -74,7 +74,7 @@ $(document).ready(function () {
 
     $('.rename-icon').click(function(e){
 
-        
+
     });
 
 });

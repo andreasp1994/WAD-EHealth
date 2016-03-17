@@ -5,7 +5,10 @@ from django.contrib.auth.models import User
 class Searcher(models.Model):
     # This line is required. Links UserProfile to a User model instance.
     user = models.OneToOneField(User)
-
+    name = models.CharField(max_length=128)
+    surname = models.CharField(max_length=128)
+    username = models.CharField(max_length=128)
+    email = models.CharField(max_length=128)
     # The additional attributes we wish to include.
 
     picture = models.ImageField(upload_to='profile_images', blank=True)
