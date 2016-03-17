@@ -5,7 +5,10 @@ from django.contrib.auth.models import User
 class Searcher(models.Model):
     # This line is required. Links UserProfile to a User model instance.
     user = models.OneToOneField(User)
-
+    name = models.CharField(max_length=128)
+    surname = models.CharField(max_length=128)
+    username = models.CharField(max_length=128)
+    email = models.CharField(max_length=128)
     # The additional attributes we wish to include.
 
     picture = models.ImageField(upload_to='profile_images', blank=True)
@@ -19,6 +22,7 @@ class Category(models.Model):
     user = models.ForeignKey(User)
     slug = models.SlugField(default="")
     id = models.AutoField(primary_key=True)
+    shared = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         # Uncomment if you don't want the slug to change every time the name changes

@@ -56,10 +56,26 @@ ul.cat-list div{
     height: 60px;
 }
 
-span.cat-expand {
+img.rename-icon {
+    margin-right: 10px;
     float: right;
-    font-size: 20px;
-    color: black;
+    width:25px;
+    height: 25px;
+    transition: 0.4s;
+}
+
+img.share-icon {
+    float: right;
+    width:25px;
+    height: 25px;
+    transition: 0.4s;
+}
+
+img.delete-icon {
+    margin-right: 10px;
+    float: right;
+    width:25px;
+    height: 25px;
     transition: 0.4s;
 }
 
