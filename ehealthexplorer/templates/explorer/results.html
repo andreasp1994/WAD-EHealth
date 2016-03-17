@@ -22,9 +22,7 @@
                     <ol>
                     {% for result in results %}
                         <li><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
-                            {% if read %}{% if pola %}{% if subj %}
-                            <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
-                            {% endif %}{% endif %}{% endif %}
+                            <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }} Source: {{ result.source }}</h6>
                         </li>
                     {% endfor %}
                     </ol>
@@ -41,9 +39,7 @@
                     <ol>
                     {% for result in bing %}
                         <li><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
-                            {% if read %}{% if pola %}{% if subj %}
                             <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
-                            {% endif %}{% endif %}{% endif %}
                         </li>
                     {% endfor %}
                     </ol>

@@ -1,6 +1,8 @@
 import json
 import urllib, urllib2
 from keys import BING_API_KEY
+from textstat.textstat import textstat
+from textblob import TextBlob
 
 def run_bing_query(search_terms):
     # Specify the base
@@ -53,10 +55,18 @@ def run_bing_query(search_terms):
 
         # Loop through each page returned, populating our results list.
         for result in json_response['d']['results']:
+            summary = result['Description']
+            blobSummary = TextBlob(summary)
             results.append({
                 'title':result['Title'],
                 'url':result['Url'],
-                'summary':result['Description']})
+                'summary':result['Description'],
+                'read':textstat.flesch_reading_ease(result['Description']),
+                'read':textstat.flesch_reading_ease(summary),
+                'pola':("%.2f" % blobSummary.sentiment.polarity),
+                'subj':("%.2f" % blobSummary.sentiment.subjectivity),
+                'source':'Bing'
+                })
 
     except urllib2.URLError as e:
         print "Error when querying the Bing API: ", e
