@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import render_to_response
 from explorer.bing_search import run_query
 from django.http import HttpResponse
 import json
@@ -18,6 +17,7 @@ def index(request):
             task = request.POST.get('task',None)
             if task != None:
                 if (task == "AJAX_ADD_CATEGORY"):
+
                     try:
                         cat_name = request.POST['name']
                         cat_name += str(Category.objects.filter(user=get_user(request)).count())
@@ -26,6 +26,23 @@ def index(request):
                         cat.save()
                     except Exception as e:
                         print e
+
+                elif (task == "AJAX_DELETE_CATEGORY"):
+                    id = request.POST['id']
+                    cat = Category.objects.filter(id=id)
+                    cat.delete()
+
+                elif (task == "AJAX_SHARE_CATEGORY"):
+                    id = request.POST['id']
+                    cat = Category.objects.filter(id=id).get()
+
+                    if (cat.shared == False):
+                        cat.shared = True
+                    else:
+                        cat.shared = False
+
+                    cat.save()
+
 
                 return HttpResponse(json.dumps({'message': task}))
 

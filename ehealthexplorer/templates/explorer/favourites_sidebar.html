@@ -2,9 +2,6 @@
 <div class="row fav-container">
     <div class="col-md-12">
 
-
-
-
         <ul class="cat-list">
             {% if categories %}
                     {% for category in categories %}
@@ -13,11 +10,16 @@
                         <input type="checkbox" class="fav-check" id="{{ category.id }}" />
                         <label for="{{ category.id }}">
                             {{ category.name }}
-                            <span class="cat-expand">
-                                +
-                            </span>
-                        </label>
 
+                            {% if category.shared %}
+                                <img src="{{ STATIC_URL }}icons/shared_ico.png" class="share-icon"/>
+                            {% else %}
+                                <img src="{{ STATIC_URL }}icons/not_shared_ico.png" class="share-icon"/>
+                            {% endif %}
+                            <img src="{{ STATIC_URL }}icons/rename_ico.png" class="rename-icon"/>
+                            <img src="{{ STATIC_URL }}icons/delete_ico.png" class="delete-icon"/>
+
+                        </label>
 
                            <ul class="fav-list">
                                     <div class="col-md-12 col-centered">

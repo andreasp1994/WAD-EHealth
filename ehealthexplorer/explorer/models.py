@@ -19,6 +19,7 @@ class Category(models.Model):
     user = models.ForeignKey(User)
     slug = models.SlugField(default="")
     id = models.AutoField(primary_key=True)
+    shared = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         # Uncomment if you don't want the slug to change every time the name changes
