@@ -28,13 +28,17 @@
                         </label>
 
                            <ul class="fav-list">
-                                    <div class="col-md-12 col-centered">
-                                        <li><a href="#">Topic 1</a></li>
-                                        <li><a href="#">Topic 2</a></li>
-                                        <li><a href="#">Topic 3</a></li>
-                                        <li><a href="#">Topic 4</a></li>
-                                        <li><a href="#">Topic 5</a></li>
-                                        <li><a href="#">Topic 6</a></li>
+
+                                    <div class="col-md-12 fav-page-container">
+                                        {%  if category.saved %}
+                                            {% for result in category.saved %}
+                                                <li><a href="{{ result.url }}">{{ result.title }}</a> <img data-id="{{ result.id }}" src="{{ STATIC_URL }}icons/delete_ico.png" class="fav-delete-icon"/></li>
+                                            {% endfor %}
+
+                                        {% else %}
+                                            <strong> No saved pages in this category.</strong>
+                                            <br />
+                                        {% endif %}
                                    </div>
                             </ul>
                     </li>

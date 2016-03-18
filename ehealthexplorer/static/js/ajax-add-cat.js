@@ -102,7 +102,29 @@ $(document).ready(function () {
                     });
             }
         });
-
-
     });
+
+    $('.fav-delete-icon').click(function(e) {
+
+        var topic_id = $(e.target).data('id');
+        $.post("",
+            {
+                task:"AJAX_DELETE_FAVOURITE",
+                id:topic_id
+            },
+            function () {
+                $.get('/explorer/sidebar/favourites/'  , function(data) {
+                temp = data;
+                $('#sidebar').html(temp);
+                });
+            })
+            .fail(function(xhr){
+                console.log("Error: " + xhr.statusText);
+                alert("Error: " + xhr.statusText);
+            });
+
+        e.preventDefault();
+        return false;
+    });
+
 });

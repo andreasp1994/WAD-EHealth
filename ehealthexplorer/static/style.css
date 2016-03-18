@@ -44,16 +44,8 @@ ul.cat-list {
     text-align:center;
 }
 
-ul.cat-list li {
-
-}
-
-ul.cat-list > li{
-  margin-bottom:15px;
-}
-
-ul.cat-list div{
-    height: 60px;
+ul.cat-list > li {
+    margin-bottom: 15px;
 }
 
 img.rename-icon {
@@ -79,9 +71,71 @@ img.delete-icon {
     transition: 0.4s;
 }
 
-.cat-list div {
-    display: block;
+img.fav-delete-icon {
+    margin-right: 5px;
+    float: right;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+
 }
+
+ul.fav-list  > li{
+    margin-bottom:15px;
+}
+
+ul.fav-list{
+    padding-top: 20px;
+}
+
+ul.fav-list li {
+    height: 40px;
+    background-color: #a1a1a1;
+    margin-bottom:20px;
+    border-radius: 20px;
+    display:block;
+    clear:both;
+    padding-left: 15px;
+    transition: 0.4s;
+    text-align: left;
+    font-size: 18px;
+    float: right;
+    width: 70%;
+}
+
+ul.fav-list li:hover {
+    width: 100%;
+    background-color: #31b0d5;
+}
+
+ul.fav-list li:hover a {
+    color: white;
+}
+
+ul.fav-list li a {
+    line-height: 40px;
+    vertical-align: middle;
+    text-decoration: none;
+    color: black;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    width: 80%;
+    white-space: nowrap;
+}
+
+
+.fav-page-container {
+    padding: 0px;
+}
+
+/*ul.cat-list ul.fav-list li{*/
+    /*height: 70px;*/
+    /*float:left;*/
+    /*width:70px;*/
+    /*margin: 10px;*/
+/*}*/
+
 
 ul.cat-list li > label{
     background-color: #b1b1b1;
@@ -103,32 +157,6 @@ ul.cat-list li label:hover{
     background-color: #31b0d5;
     color: white;
     font-size: 20px;
-}
-
-ul.fav-list{
-    padding: 10px;
-}
-
-ul.cat-list ul.fav-list li{
-
-    height: 70px;
-    float:left;
-    width:70px;
-    margin: 10px;
-
-}
-
-ul.cat-list li a{
-  background:#5A9BD5;
-  display:block;
-  width:100%;
-  padding:25px 0;
-  text-decoration:none;
-  transition: 0.4s;
-}
-
-ul.cat-list li a:hover{
-  background:#cf5;
 }
 
 .block {

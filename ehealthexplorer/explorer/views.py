@@ -6,9 +6,9 @@ from django.http import HttpResponse
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import get_user
-from models import Category
-import random
+from models import Category, Page
 from operator import itemgetter
+from datetime import datetime
 
 @csrf_exempt
 def index(request):
@@ -17,7 +17,6 @@ def index(request):
 
     if request.user.is_authenticated():
         if request.method == "POST":
-            print "Post request"
             task = request.POST.get('task',None)
             if task != None:
                 if (task == "AJAX_ADD_CATEGORY"):
@@ -42,6 +41,7 @@ def index(request):
 
                     if (cat.shared == False):
                         cat.shared = True
+                        cat.time_shared = datetime.now()
                     else:
                         cat.shared = False
                     cat.save()
@@ -52,6 +52,12 @@ def index(request):
                     cat = Category.objects.filter(id=id).get()
                     cat.name=new_name
                     cat.save()
+
+
+                elif (task == "AJAX_DELETE_FAVOURITE"):
+                    id = request.POST['id']
+                    page = Page.objects.filter(id=id).get()
+                    page.delete()
 
                 return HttpResponse(json.dumps({'message': task}))
 
@@ -97,6 +103,12 @@ def favourites_sidebar(request):
 
     if request.user.is_authenticated():
         category_list = Category.objects.filter(user=get_user(request))
+        for cat in category_list:
+            cat.test = "test"
+            cat.saved = Page.objects.filter(category=cat)
+            for t in cat.saved:
+                print t
+
         context_dict['categories'] = category_list
 
     response = render(request, 'explorer/favourites_sidebar.html', context_dict)
@@ -106,23 +118,23 @@ def favourites_sidebar(request):
 def search_sidebar(request):
 
     context_dict={}
-
     response = render(request, 'explorer/search_sidebar.html', context_dict)
-
     return response
 
 def profile_sidebar(request):
 
     context_dict ={}
-
     response = render(request, 'explorer/profile_sidebar.html', context_dict)
-
     return response
 
 def settings_sidebar(request):
 
     context_dict = {}
-
     response = render(request, 'explorer/settings_sidebar.html', context_dict)
+    return response
 
+def categories(request):
+
+    context_dict= {}
+    response = render(request, 'explorer/categories/',context_dict)
     return response

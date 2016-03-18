@@ -7,6 +7,7 @@ urlpatterns = patterns('',
         url(r'^sidebar/favourites',views.favourites_sidebar,  name='favourites_sidebar'),
         url(r'^sidebar/search',views.search_sidebar,  name='search_sidebar'),
         url(r'^sidebar/profile',views.profile_sidebar,name='profile_sidebar'),
+        url(r'^categories/$',views.categories, name='search_categories'),
         url(r'^results/$', views.results, name='results'),
         url(r'^sidebar/settings', views.settings_sidebar, name='settings_sidebar'),
 )
