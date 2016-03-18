@@ -23,7 +23,7 @@ class Category(models.Model):
     slug = models.SlugField(default="")
     id = models.AutoField(primary_key=True)
     shared = models.BooleanField(default=False)
-    time_shared = models.DateTimeField(default=None,null=True,blank=True);
+    time_shared = models.DateTimeField(default=None,null=True,blank=True)
 
     def save(self, *args, **kwargs):
         # Uncomment if you don't want the slug to change every time the name changes
