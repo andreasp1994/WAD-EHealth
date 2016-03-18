@@ -1,5 +1,6 @@
 from django.contrib import admin
 from models import Searcher,Category, Page
+from django.contrib.auth.models import User
 
 
 # Register your models here.
