@@ -44,9 +44,14 @@ def index(request):
                         cat.shared = True
                     else:
                         cat.shared = False
-
                     cat.save()
 
+                elif (task == "AJAX_RENAME_CATEGORY"):
+                    id = request.POST['id']
+                    new_name = request.POST['new_name']
+                    cat = Category.objects.filter(id=id).get()
+                    cat.name=new_name
+                    cat.save()
 
                 return HttpResponse(json.dumps({'message': task}))
 
@@ -60,18 +65,20 @@ def index(request):
 
 
 def results(request):
+
+    query = 'common cold'.strip()     
     
     bing_results=[]
     medLine_results=[]
     healthFinder_results=[]
 
-    query = 'flu'.strip()       ## PLACEHOLDER todo
-    
     if query:
-        bing_results= run_bing_query(query)
+        bing_results = run_bing_query(query)
         medLine_results = run_medline_query(query)
-        healthFinder_results = run_healthfinder_query(query)
-
+        try:
+            healthFinder_results = run_healthfinder_query(query)
+        except TypeError as e:
+            print "Search failed: ", e
     main_list = (bing_results + medLine_results + healthFinder_results)
     main_list = sorted(main_list, key=itemgetter('read'), reverse=True)
     context_dict={'results':main_list, 

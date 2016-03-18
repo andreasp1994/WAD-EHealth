@@ -1,4 +1,8 @@
 <script src="{{ STATIC_URL }}js/ajax-add-cat.js"></script>
+
+<link href="{{ STATIC_URL }}bootstrap-editable/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+<script src="{{ STATIC_URL }}bootstrap-editable/bootstrap3-editable/js/bootstrap-editable.js"></script>
+
 <div class="row fav-container">
     <div class="col-md-12">
 
@@ -9,7 +13,9 @@
                         <li>
                         <input type="checkbox" class="fav-check" id="{{ category.id }}" />
                         <label for="{{ category.id }}">
+                            <span id="cat_name">
                             {{ category.name }}
+                            </span>
 
                             {% if category.shared %}
                                 <img src="{{ STATIC_URL }}icons/shared_ico.png" class="share-icon"/>
