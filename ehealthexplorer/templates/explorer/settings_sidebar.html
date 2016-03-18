@@ -9,19 +9,27 @@
 
         <div>
             </br>
-            <p class="text-primary"><strong>Name:</strong> <span class="to-edit form-control form-group">UserName</span></p>
-            <p class="text-primary"><strong>Surname:</strong> <span class="to-edit form-control form-group">UserSurname</span></p>
-            <p class="text-primary"><strong>Username:</strong> <span class="to-edit form-control form-group">{{ user.username }}</span></p>
-            <p class="text-primary"><strong>Email:</strong> <span class="to-edit form-control form-group">someone@example.com</span></p>
-            <button id="edit" class="btn btn-default">Change</button>
+            <p class="text-primary"><strong>Name:</strong> <span id="name" class="to-edit form-control form-group">{{ user.name }}</span></p>
+            <p class="text-primary"><strong>Surname:</strong> <span id="surname" class="to-edit form-control form-group">{{ user.surname }}</span></p>
+            <p class="text-primary"><strong>Username:</strong> <span id="username" class="to-edit form-control form-group">{{ user.username }}</span></p>
+            <p class="text-primary"><strong>Email:</strong> <span id="email" class="to-edit form-control form-group">{{ user.email }}</span></p>
+            <button id="edit" class="btn btn-default">Edit</button>
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready(function (){
         $('#edit').click(function (){
-            $.fn.editable.defaults.mode = 'inline';
-            $('.to-edit').editable();
+            if ($(this).html()=='Edit'){
+                $.fn.editable.defaults.mode = 'inline';
+                $('.to-edit').editable();
+                $('#edit').html('Save');
+            }
+            else if ($(this).html()=='Save'){
+                $('.to-edit').editable('destroy');
+                $('#edit').html('Edit');
+            }
         });
     });
 </script>
