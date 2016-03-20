@@ -338,8 +338,7 @@ a.glyphicon {
 
 .predefined-terms-info span.glyphicon:hover span.popup {
      display: inline;
-     }
-
+}
 
 
 /*****************
@@ -360,12 +359,12 @@ Search styling
     box-shadow: none;
 }
 
-#custom-search-input button{
-    width: 100px;
-    box-shadow: none;
-    border: 0;
-    color: #ffffff;
-    border-left: solid 1px #ccc;
+#search_box{
+    width: 100%;
+}
+
+#search_button {
+    width: 100%;
 }
 
 #custom-search-input button:hover{
@@ -382,26 +381,6 @@ Search styling
 End of serch styling
 **********************/
 
-
-.light_gg {
-  line-height: 100%;
-  height:100%;
-  background-color: #999999;
-}
-
-.light_g {
-  margin-top: auto;
-  margin-bottom: auto;
-   display: flex;
-    align-items: center;
-  background-color: #888888;
-}
-
-
-.vcenter {
-    margin-top: 25%;
-    position: absolute;
-}
 
 .right {
     float:right;
@@ -426,8 +405,8 @@ Settings styling
 }
 
 .no-gutter {
-    padding-right: 0;
-    padding-left: 0;
+   padding: 0 !important;
+   margin: 0 !important;
 }
 /******************************
 Shared cateegories styling
