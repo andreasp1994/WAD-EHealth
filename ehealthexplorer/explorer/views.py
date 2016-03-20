@@ -73,7 +73,8 @@ def index(request):
 @csrf_exempt
 def results(request):
 
-    query = 'common cold'.strip()     
+    search_term = request.POST['query']
+    query = search_term.strip()
     
     bing_results=[]
     medLine_results=[]

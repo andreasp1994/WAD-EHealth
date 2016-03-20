@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'explorer',
     'registration',
+    'bootstrap_toolkit',
 )
 
 

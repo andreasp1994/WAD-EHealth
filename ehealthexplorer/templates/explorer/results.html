@@ -13,7 +13,7 @@
         <li><a data-toggle="tab" href="#medLine">MedLine</a></li>
         <li><a data-toggle="tab" href="#healthFinder">HealthFinder</a></li>
     </ul>
-    
+
     <div class="tab-content">
         <div id="results" class="tab-pane fade in active">
             <h3>All results</h3>
@@ -96,51 +96,69 @@
     These should come from the context dict seperately?
     For the moment they are. 
  -->
- 
+
 {% block side_block %}
 
+    <div class="row " >
+    		<!--<h2 class="search-text">Search</h2>-->
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <span class="input-group-btn">
+                         <form class="form-inline" id="search_form" method="post" action="{% url 'results' %}">
+                             {% csrf_token %}
+                             <div class="col-md-2 no-gutter">
+                                <button class="btn btn-info btn-lg" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                             </div>
+                             <div class="col-md-8 col-md-offset-2 no-gutter">
+                                <input id="search_box" name="query" type="text" class="form-control input-lg" placeholder="Search..." />
+                             </div>
+                         </form>
+                    </span>
+                </div>
+            </div>
+        </div>
+
     <h3>Ratings summary</h3>
-    
-    <div id="results-container">
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#read">Readability</a></li>
-        <li><a data-toggle="tab" href="#pola">Polarity</a></li>
-        <li><a data-toggle="tab" href="#subj">Subjectivity</a></li>
-    </ul>
-    
-    <div class="tab-content">
-        <div id="read" class="tab-pane fade in active">
-            <ul>
-                <li>90+ : Very Easy</li>
-                <li>80-89 : Easy</li>
-                <li>70-79 : Fairly Easy</li>
-                <li>60-69 : Standard</li>
-                <li>50-59 : Fairly Difficult</li>
-                <li>30-49 : Difficult</li>
-                <li>0-29 : Very Difficult</li>
-            </ul>
+    <div class="col-md-12">
+        <div class="col-md-4">
+        <div class="predefined-terms-info">
+             <span id="test" class="glyphicon glyphicon-question-sign"><span class="popup">
+                90+   : Very Easy</br>
+                80-89 : Easy</br>
+                70-79 : Fairly Easy</br>
+                60-69 : Standard</br>
+                50-59 : Fairly Difficult</br>
+                30-49 : Difficult</br>
+                0-29  : Very Difficult</br>
+             </span> </span>
         </div>
-        
-        <div id="pola" class="tab-pane fade">
-            <ul>
-                <li>1 : Very positive</li>
-                <li>0.5 : Fairly positive</li>
-                <li>0 : Neutral</li>
-                <li>-0.5 : Fairly negative</li>
-                <li>-1 : Very negative</li>
-            </ul>
         </div>
-        
-        <div id="subj" class="tab-pane fade">
-            <ul>
-                <li>1 : Subjective</li>
-                <li>0.5 : Neutral</li>
-                <li>0 : Objective</li>
-            </ul>
+        <div class="col-md-4">
+        <div class="predefined-terms-info">
+             <span id="test" class="glyphicon glyphicon-question-sign"> <span class="popup">
+                 1 : Very positive</br>
+                 0.5 : Fairly positive</br>
+                 0 : Neutral</br>
+                -0.5 : Fairly negative</br>
+                -1 : Very negative</br>
+             </span> </span>
+        </div>
+        </div>
+        <div class="col-md-4">
+        <div class="predefined-terms-info">
+            <span id="test" class="glyphicon glyphicon-question-sign"> <span class="popup">
+                1 : Subjective</br>
+                0.5 : Neutral</br>
+                0 : Objective</br>
+            </span></span>
+        </div>
         </div>
     </div>
+
     
-    
-    
+
+
  
 {% endblock %}
