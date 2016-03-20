@@ -20,8 +20,8 @@ class Searcher(models.Model):
         return self.user.username
 
 class Category(models.Model):
-    name = models.CharField(max_length=128)
     user = models.ForeignKey(User)
+    name = models.CharField(max_length=128)
     slug = models.SlugField(default="")
     id = models.AutoField(primary_key=True)
     shared = models.BooleanField(default=False)
@@ -44,7 +44,7 @@ class Page(models.Model):
     url = models.URLField(default="")
     id = models.AutoField(primary_key=True)
 
-    flesch_score = models.IntegerField(default =0)
+    flesch_score = models.IntegerField(default=0)
     polarity_score=models.IntegerField(default=0)
     subjectivity_score=models.IntegerField(default=0)
 
