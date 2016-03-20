@@ -9,6 +9,7 @@ from django.contrib.auth import get_user
 from models import Category, Page
 from operator import itemgetter
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
 
 @csrf_exempt
 def index(request):
@@ -147,6 +148,7 @@ def results(request):
     response = render(request,'explorer/results.html',context_dict)   
     return response
 
+@login_required
 def favourites_sidebar(request):
 
     context_dict={}
@@ -162,6 +164,7 @@ def favourites_sidebar(request):
 
     return response
 
+@login_required
 def search_sidebar(request):
 
     context_dict={}
@@ -172,12 +175,14 @@ def search_sidebar(request):
     response = render(request, 'explorer/search_sidebar.html', context_dict)
     return response
 
+@login_required
 def profile_sidebar(request):
 
     context_dict ={}
     response = render(request, 'explorer/profile_sidebar.html', context_dict)
     return response
 
+@login_required
 def settings_sidebar(request):
 
     context_dict = {}
