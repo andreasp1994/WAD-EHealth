@@ -104,10 +104,7 @@ def favourites_sidebar(request):
     if request.user.is_authenticated():
         category_list = Category.objects.filter(user=get_user(request))
         for cat in category_list:
-            cat.test = "test"
             cat.saved = Page.objects.filter(category=cat)
-            for t in cat.saved:
-                print t
 
         context_dict['categories'] = category_list
 
@@ -133,8 +130,20 @@ def settings_sidebar(request):
     response = render(request, 'explorer/settings_sidebar.html', context_dict)
     return response
 
-def categories(request):
 
-    context_dict= {}
-    response = render(request, 'explorer/categories/',context_dict)
+def search_categories(request, query):
+    print query
+    context_dict = {}
+
+    if (query == "default"):
+        shared_categories = Category.objects.filter(shared=True)
+    else:
+        shared_categories = Category.objects.filter(shared=True, name__contains=query)
+
+    for cat in shared_categories:
+            cat.saved = Page.objects.filter(category=cat)
+
+    context_dict['shared_categories']=shared_categories
+
+    response = render(request, 'explorer/search_categories.html',context_dict)
     return response
