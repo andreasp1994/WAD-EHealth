@@ -3,8 +3,9 @@
 {% load staticfiles %}
 
 {% block body_block %}
-
-
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="{{ STATIC_URL }}js/auto-complete.js"></script>
 	<div class="row " >
 
 
@@ -22,6 +23,7 @@
                                  </button>
                                  </div>
                                  <div class="col-md-10 no-gutter">
+                                     <label for="search_box"></label>
                                  <input id="search_box" name="query" type="text" class="form-control input-lg" placeholder="Search..." />
                                  </div>
 
