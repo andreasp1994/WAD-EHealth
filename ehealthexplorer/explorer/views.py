@@ -22,7 +22,7 @@ def results(request):
 
     search_term = request.POST['query']
     query = search_term.strip()
-    
+
     bing_results=[]
     medLine_results=[]
     healthFinder_results=[]
@@ -34,6 +34,7 @@ def results(request):
             healthFinder_results = run_healthfinder_query(query)
         except TypeError as e:
             print "Search failed: ", e
+
     main_list = (bing_results + medLine_results + healthFinder_results)
     main_list = sorted(main_list, key=itemgetter('read'), reverse=True)
     context_dict={'results':main_list, 
@@ -41,6 +42,8 @@ def results(request):
                   'medLine':medLine_results,
                   'healthFinder':healthFinder_results 
                  } ## Placeholder until search function can be implemented
+
+    context_dict['query'] = query
 
     response = render(request,'explorer/results.html',context_dict)   
     return response
