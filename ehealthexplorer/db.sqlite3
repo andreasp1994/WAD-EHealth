@@ -42,7 +42,7 @@
       <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
     <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
     <link rel="assets" href="https://assets-cdn.github.com/">
-    <link rel="web-socket" href="wss://live.github.com/_sockets/OTE0MTgyNjo5ZWM1ZGI3ZDg1NTExNTkyZDBjN2Q4Zjc4MDhhNjM3MTplYjU1MTJlMTE0Njg2N2JmN2RkMmI1OWU1MGUyYzhmNTEyNmQ0M2ZhNzM5NDAwNjRlYmZiYmRjNzM3N2Q5ZTNl--61fa3c70c5234aaff365f9e95de3ceea1758b267">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/OTE0MTgyNjo5ZWM1ZGI3ZDg1NTExNTkyZDBjN2Q4Zjc4MDhhNjM3MTozZDRkMDczZmE3NGZiNTU5MGJjYjBiNzdmYTk2YWRhYTE3MWU2MjVhODMzOTYyY2ZkMDI5YjkwNzk3OTk4M2Fm--30f239a6582891067eac7aa66a3113f9daed8fae">
     <meta name="pjax-timeout" content="1000">
     <link rel="sudo-modal" href="/sessions/sudo_modal">
 
@@ -54,7 +54,7 @@
 <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-analytics" content="UA-3769691-2">
 
-<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="5770D445:5F9A:8C7F08E:56EEF64F" name="octolytics-dimension-request_id" /><meta content="9141826" name="octolytics-actor-id" /><meta content="npitsillos" name="octolytics-actor-login" /><meta content="510e70e08195ceab7a5e0d64ecf9f80e9b4a596488f07ece03395dfad8c44af7" name="octolytics-actor-hash" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="5770D445:38FB:98D22D9:56EEF858" name="octolytics-dimension-request_id" /><meta content="9141826" name="octolytics-actor-id" /><meta content="npitsillos" name="octolytics-actor-login" /><meta content="510e70e08195ceab7a5e0d64ecf9f80e9b4a596488f07ece03395dfad8c44af7" name="octolytics-actor-hash" />
 <meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
 
 
@@ -67,7 +67,7 @@
     <meta name="user-login" content="npitsillos">
 
         <meta name="expected-hostname" content="github.com">
-      <meta name="js-proxy-site-detection-payload" content="YjQyOGE4ZjU2Mjc2ZmNiMDJiZDBmZWFiNzdjYWI1ZmE3MmYyZTg4Yzk0YzM0OGIwNzBjMTJkYTJmYjc1MjM4NHx7InJlbW90ZV9hZGRyZXNzIjoiODcuMTEyLjIxMi42OSIsInJlcXVlc3RfaWQiOiI1NzcwRDQ0NTo1RjlBOjhDN0YwOEU6NTZFRUY2NEYifQ==">
+      <meta name="js-proxy-site-detection-payload" content="ZTEzNDVkMjBjMjI1N2E2MDEyNWNjMzk2YjNjZDMzNGVlMGMwNmM0OWE5MzIyMjY1MGFmYjMyNWZjMTlhNGNmZXx7InJlbW90ZV9hZGRyZXNzIjoiODcuMTEyLjIxMi42OSIsInJlcXVlc3RfaWQiOiI1NzcwRDQ0NTozOEZCOjk4RDIyRDk6NTZFRUY4NTgifQ==">
 
       <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
       <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
@@ -226,7 +226,7 @@
             Settings
           </a>
 
-          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Gon863KH5sNxieOKvFcerGak8hWERFc59yzj+osptbQ3VS+NHjI6RvJ0zKy5y7l4LcfZVvCgU3z67QQ5rnLiTQ==" /></div>
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="awpUyt2bScDzdXKGImjT1RM09Wol1j4uWqS9PXCxPz+/Tc0RtWTSuxt4ZgcmEu/JZfW2LpJLvLrMmbsDiOrrpA==" /></div>
             <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
               Sign out
             </button>
@@ -264,7 +264,7 @@
 <ul class="pagehead-actions">
 
   <li>
-        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Ly9C6eg97A/52xOzRimS1ijK5SFF2UUYrD7Ga0rb1x20TdIkiHm2FdilwaW3i5tEot9nM4M17d9JGypqLijzZg==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="52883946" />
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="LIJ1Hh+o+SFW7x7VJWHWZ0NrYh/X+4jnT4s+jUaENyVIkGAPLYDXxxzcosIfFcpiM0GJSrFk3+/1ByQ5fwGbrw==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="52883946" />
 
         <div class="select-menu js-menu-container js-select-menu">
           <a href="/npitsillos/WAD-EHealth/subscription"
@@ -339,7 +339,7 @@
     
   <div class="js-toggler-container js-social-container starring-container ">
 
-    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/npitsillos/WAD-EHealth/unstar" class="js-toggler-form starred" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="0wYNuNTq2ce0tmXMJE6W6msvwzslN1ypqV+e4nYVRlm1iBRyDSsEn6vn0+FLekt/ld0gWqLn35o17MFg8YifMw==" /></div>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/npitsillos/WAD-EHealth/unstar" class="js-toggler-form starred" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="7xX901OP1PHAU6t8grJqC2qxvr8n+li+Kw8/RrowE48cny8fiNvImCYRlp276YlfuwcivCrk5hv6CRggqS2weA==" /></div>
       <button
         class="btn btn-sm btn-with-count js-toggler-target"
         aria-label="Unstar this repository" title="Unstar npitsillos/WAD-EHealth"
@@ -351,7 +351,7 @@
           0
         </a>
 </form>
-    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/npitsillos/WAD-EHealth/star" class="js-toggler-form unstarred" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="DLZmvjaZuzuoG/mQ0hG+H9llVxx9mwtLVHPd6yEyM55DofI5a21pJTtEgt7YMz9Wkxj74QkDOh/2IAqPURyOIw==" /></div>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/npitsillos/WAD-EHealth/star" class="js-toggler-form unstarred" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Xrq07K/0NVoAMGMen3gtVITOLDS0SyoGBGciDXWjvnxO58lxqzsnSSoVZ8my5Z2egOStm+NgEVG0OLYqBvztiQ==" /></div>
       <button
         class="btn btn-sm btn-with-count js-toggler-target"
         aria-label="Star this repository" title="Star npitsillos/WAD-EHealth"
@@ -367,7 +367,7 @@
   </li>
 
   <li>
-          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/npitsillos/WAD-EHealth/fork" class="btn-with-count" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="4wJ3az7zvl2nJ8GYPTvu2Cogx4v1qcFkdO18NwVhrx4OiYHi5FjH6HWhsBCzfTDjRd3gtjS1hATtLfZ0XL/r+w==" /></div>
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/npitsillos/WAD-EHealth/fork" class="btn-with-count" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="6IvugkwQXz5fwtOmOqFT0sZ6DHaBUU2kCDxFNfB5FK9zxsc4Ya+YL1jQw7xFeAqnNTX6/QlwkySauZPSGEFCtg==" /></div>
             <button
                 type="submit"
                 class="btn btn-sm btn-with-count"
@@ -454,9 +454,9 @@
 
     
 
-<a href="/npitsillos/WAD-EHealth/blob/100284a0fcf249c7e34dee229a5d84db3fb9043f/ehealthexplorer/db.sqlite3" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<a href="/npitsillos/WAD-EHealth/blob/d4bd4c5007e3fb84ed686c913f3c6bbd5d777511/ehealthexplorer/db.sqlite3" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
 
-<!-- blob contrib key: blob_contributors:v21:64493483e0b6c413221d8a610fcc6d49 -->
+<!-- blob contrib key: blob_contributors:v21:1004280ccaba47af588821d24c7e23ac -->
 
 <div class="file-navigation js-zeroclipboard-container">
   
@@ -509,7 +509,7 @@
             </a>
         </div>
 
-          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/npitsillos/WAD-EHealth/branches" class="js-create-branch select-menu-item select-menu-new-item-form js-navigation-item js-new-item-form" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="BCfMC4ciokhLG5/862aMs+xCcEE4Ijey+jWUj+Tq9hl9lVcgvXjwOTJjuhzh8vNW8w6fcSWhvOhO9/9rfgM/vw==" /></div>
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/npitsillos/WAD-EHealth/branches" class="js-create-branch select-menu-item select-menu-new-item-form js-navigation-item js-new-item-form" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="OhJN+J+Ahs6+hruCzLLx2McvWpKm1bNWEUNhXu3QyHOxgOvF8yfIDk0f/YyVmkl9imN5nXJrz8p241LrWNVodg==" /></div>
           <svg aria-hidden="true" class="octicon octicon-git-branch select-menu-item-icon" height="16" role="img" version="1.1" viewBox="0 0 10 16" width="10"><path d="M10 5c0-1.11-0.89-2-2-2s-2 0.89-2 2c0 0.73 0.41 1.38 1 1.72v0.3c-0.02 0.52-0.23 0.98-0.63 1.38s-0.86 0.61-1.38 0.63c-0.83 0.02-1.48 0.16-2 0.45V4.72c0.59-0.34 1-0.98 1-1.72 0-1.11-0.89-2-2-2S0 1.89 0 3c0 0.73 0.41 1.38 1 1.72v6.56C0.41 11.63 0 12.27 0 13c0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.53-0.2-1-0.53-1.36 0.09-0.06 0.48-0.41 0.59-0.47 0.25-0.11 0.56-0.17 0.94-0.17 1.05-0.05 1.95-0.45 2.75-1.25s1.2-1.98 1.25-3.02h-0.02c0.61-0.36 1.02-1 1.02-1.73zM2 1.8c0.66 0 1.2 0.55 1.2 1.2s-0.55 1.2-1.2 1.2-1.2-0.55-1.2-1.2 0.55-1.2 1.2-1.2z m0 12.41c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z m6-8c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z"></path></svg>
             <div class="select-menu-item-text">
               <span class="select-menu-item-heading">Create branch: <span class="js-new-item-name"></span></span>
@@ -548,16 +548,46 @@
   </div>
 </div>
 
-<include-fragment class="commit-tease" src="/npitsillos/WAD-EHealth/contributors/master/ehealthexplorer/db.sqlite3">
-  <div>
-    Fetching contributors&hellip;
+
+  <div class="commit-tease">
+      <span class="right">
+        <a class="commit-tease-sha" href="/npitsillos/WAD-EHealth/commit/d4bd4c5007e3fb84ed686c913f3c6bbd5d777511" data-pjax>
+          d4bd4c5
+        </a>
+        <time datetime="2016-03-20T19:18:50Z" is="relative-time">Mar 20, 2016</time>
+      </span>
+      <div>
+        <img alt="@andreasp1994" class="avatar" height="20" src="https://avatars0.githubusercontent.com/u/9083030?v=3&amp;s=40" width="20" />
+        <a href="/andreasp1994" class="user-mention" rel="contributor">andreasp1994</a>
+          <a href="/npitsillos/WAD-EHealth/commit/d4bd4c5007e3fb84ed686c913f3c6bbd5d777511" class="message" data-pjax="true" title="backup">backup</a>
+      </div>
+
+    <div class="commit-tease-contributors">
+      <button type="button" class="btn-link muted-link contributors-toggle" data-facebox="#blob_contributors_box">
+        <strong>2</strong>
+         contributors
+      </button>
+          <a class="avatar-link tooltipped tooltipped-s" aria-label="andreasp1994" href="/npitsillos/WAD-EHealth/commits/master/ehealthexplorer/db.sqlite3?author=andreasp1994"><img alt="@andreasp1994" class="avatar" height="20" src="https://avatars0.githubusercontent.com/u/9083030?v=3&amp;s=40" width="20" /> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="npitsillos" href="/npitsillos/WAD-EHealth/commits/master/ehealthexplorer/db.sqlite3?author=npitsillos"><img alt="@npitsillos" class="avatar" height="20" src="https://avatars3.githubusercontent.com/u/9141826?v=3&amp;s=40" width="20" /> </a>
+
+
+    </div>
+
+    <div id="blob_contributors_box" style="display:none">
+      <h2 class="facebox-header" data-facebox-id="facebox-header">Users who have contributed to this file</h2>
+      <ul class="facebox-user-list" data-facebox-id="facebox-description">
+          <li class="facebox-user-list-item">
+            <img alt="@andreasp1994" height="24" src="https://avatars2.githubusercontent.com/u/9083030?v=3&amp;s=48" width="24" />
+            <a href="/andreasp1994">andreasp1994</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@npitsillos" height="24" src="https://avatars1.githubusercontent.com/u/9141826?v=3&amp;s=48" width="24" />
+            <a href="/npitsillos">npitsillos</a>
+          </li>
+      </ul>
+    </div>
   </div>
 
-  <div class="commit-tease-contributors">
-    <img alt="" class="loader-loading left" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" />
-    <span class="loader-error">Cannot retrieve contributors at this time</span>
-  </div>
-</include-fragment>
 <div class="file">
   <div class="file-header">
   <div class="file-actions">
@@ -568,7 +598,7 @@
     </div>
 
 
-        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/npitsillos/WAD-EHealth/delete/master/ehealthexplorer/db.sqlite3" class="inline-form" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="ZdBxlXfuN2sL44s2oHWtHx6CSrsfCWHQvvcb5myFgtdDIwHRyTeAVXPat90R8xL5vhq8LDa/o9k/p4BIbv+LzA==" /></div>
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/npitsillos/WAD-EHealth/delete/master/ehealthexplorer/db.sqlite3" class="inline-form" data-form-nonce="e74c0d46fc50479c7877d6c3f30aeb97b9e198ee" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="exxAw1wZmFYTiX1TrNn5+0VnufKqZLPPeAij0HOFt6IBTsj8WlPyCo7Fhu0SneKIsIBph7xCym5mPw5eZUzxpQ==" /></div>
           <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
             aria-label="Delete this file" data-disable-with>
             <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M10 2H8c0-0.55-0.45-1-1-1H4c-0.55 0-1 0.45-1 1H1c-0.55 0-1 0.45-1 1v1c0 0.55 0.45 1 1 1v9c0 0.55 0.45 1 1 1h7c0.55 0 1-0.45 1-1V5c0.55 0 1-0.45 1-1v-1c0-0.55-0.45-1-1-1z m-1 12H2V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9z m1-10H1v-1h9v1z"></path></svg>
@@ -576,7 +606,7 @@
 </form>  </div>
 
   <div class="file-info">
-    53 KB
+    54 KB
   </div>
 </div>
 
@@ -623,7 +653,7 @@
       <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" role="img" title="GitHub " version="1.1" viewBox="0 0 16 16" width="24"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
 </a>
     <ul class="site-footer-links">
-      <li>&copy; 2016 <span title="0.06355s from github-fe126-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+      <li>&copy; 2016 <span title="0.07563s from github-fe153-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
         <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
         <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
         <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
