@@ -2,8 +2,6 @@ from django.shortcuts import render
 from explorer.bing_search import run_bing_query
 from explorer.medLine_search import run_medline_query
 from explorer.healthFinder_search import run_healthfinder_query
-from django.http import HttpResponse
-import json
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import get_user
 from models import Category, Page
@@ -15,57 +13,6 @@ from django.contrib.auth.decorators import login_required
 def index(request):
 
     context_dict = {}
-
-    if request.user.is_authenticated():
-        if request.method == "POST":
-            task = request.POST.get('task',None)
-            if task is not None:
-                if (task == "AJAX_ADD_CATEGORY"):
-
-                    try:
-                        cat_name = request.POST['name']
-                        cat_name += str(Category.objects.filter(user=get_user(request)).count())
-                        searcher = request.user
-                        cat = Category.objects.create(name=cat_name,user=searcher)
-                        cat.save()
-                    except Exception as e:
-                        print e
-
-                elif (task == "AJAX_DELETE_CATEGORY"):
-                    id = request.POST['id']
-                    cat = Category.objects.filter(id=id)
-                    cat.delete()
-
-                elif (task == "AJAX_SHARE_CATEGORY"):
-                    id = request.POST['id']
-                    cat = Category.objects.filter(id=id).get()
-
-                    if (cat.shared == False):
-                        cat.shared = True
-                        cat.time_shared = datetime.now()
-                    else:
-                        cat.shared = False
-                    cat.save()
-
-                elif (task == "AJAX_RENAME_CATEGORY"):
-                    id = request.POST['id']
-                    new_name = request.POST['new_name']
-                    cat = Category.objects.filter(id=id).get()
-                    cat.name=new_name
-                    cat.save()
-
-
-                elif (task == "AJAX_DELETE_FAVOURITE"):
-                    id = request.POST['id']
-                    page = Page.objects.filter(id=id).get()
-                    page.delete()
-
-                return HttpResponse(json.dumps({'message': task}))
-
-        #Load categories from database:
-        category_list = Category.objects.filter(user=request.user)
-        context_dict['categories'] = category_list
-
 
     response = render(request,'explorer/index.html', context_dict )
     return response
@@ -95,70 +42,57 @@ def results(request):
                   'healthFinder':healthFinder_results 
                  } ## Placeholder until search function can be implemented
 
-
-    if request.user.is_authenticated():
-        if request.method == "POST":
-            task = request.POST.get('task',None)
-            if task is not None:
-                if (task == "AJAX_ADD_CATEGORY"):
-
-                    try:
-                        cat_name = request.POST['name']
-                        cat_name += str(Category.objects.filter(user=get_user(request)).count())
-                        searcher = request.user
-                        cat = Category.objects.create(name=cat_name,user=searcher)
-                        cat.save()
-                    except Exception as e:
-                        print e
-
-                elif (task == "AJAX_DELETE_CATEGORY"):
-                    id = request.POST['id']
-                    cat = Category.objects.filter(id=id)
-                    cat.delete()
-
-                elif (task == "AJAX_SHARE_CATEGORY"):
-                    id = request.POST['id']
-                    cat = Category.objects.filter(id=id).get()
-
-                    if (cat.shared == False):
-                        cat.shared = True
-                        cat.time_shared = datetime.now()
-                    else:
-                        cat.shared = False
-                    cat.save()
-
-                elif (task == "AJAX_RENAME_CATEGORY"):
-                    id = request.POST['id']
-                    new_name = request.POST['new_name']
-                    cat = Category.objects.filter(id=id).get()
-                    cat.name=new_name
-                    cat.save()
-
-
-                elif (task == "AJAX_DELETE_FAVOURITE"):
-                    id = request.POST['id']
-                    page = Page.objects.filter(id=id).get()
-                    page.delete()
-
-                return HttpResponse(json.dumps({'message': task}))
-
-        #Load categories from database:
-        category_list = Category.objects.filter(user=request.user)
-        context_dict['categories'] = category_list
-
     response = render(request,'explorer/results.html',context_dict)   
     return response
 
 @login_required
 def favourites_sidebar(request):
-
     context_dict={}
+
+    task = request.GET.get('task',"")
+    if (task == "AJAX_ADD_CATEGORY"):
+            print task
+            try:
+                cat_name = "New Category "
+                cat_name += str(Category.objects.filter(user=get_user(request)).count())
+                searcher = request.user
+                cat = Category.objects.create(name=cat_name,user=searcher)
+                cat.save()
+            except Exception as e:
+                print e
+    elif (task == "AJAX_DELETE_CATEGORY"):
+
+            id = request.GET['id']
+            cat = Category.objects.filter(id=id)
+            cat.delete()
+
+    elif (task == "AJAX_SHARE_CATEGORY"):
+            id = request.GET['id']
+            cat = Category.objects.filter(id=id).get()
+
+            if (cat.shared == False):
+                cat.shared = True
+                cat.time_shared = datetime.now()
+            else:
+                cat.shared = False
+            cat.save()
+
+    elif (task == "AJAX_RENAME_CATEGORY"):
+            id = request.GET['id']
+            new_name = request.GET['name']
+            cat = Category.objects.filter(id=id).get()
+            cat.name=new_name
+            cat.save()
+
+    elif (task == "AJAX_DELETE_FAVOURITE"):
+            id = request.GET['id']
+            page = Page.objects.filter(id=id).get()
+            page.delete()
 
     if request.user.is_authenticated():
         category_list = Category.objects.filter(user=get_user(request))
         for cat in category_list:
             cat.saved = Page.objects.filter(category=cat)
-
         context_dict['categories'] = category_list
 
     response = render(request, 'explorer/favourites_sidebar.html', context_dict)

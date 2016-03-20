@@ -2,25 +2,17 @@
  * Created by Andreas on 15/03/2016.
  */
 $(document).ready(function () {
+
+    var baseurl = '/explorer/sidebar/favourites/?task=';
+
     $('.add-cat').click(function(e){
 
-        $.post("",
-            {
-                name:"New Category ",
-                task:"AJAX_ADD_CATEGORY",
-                csrfmiddlewaretoken:'{{ csrf_token }}'
-             },
-            function(){
+        var url = baseurl.concat("AJAX_ADD_CATEGORY");
 
-                $.get('/explorer/sidebar/favourites/'  , function(data) {
-                temp = data;
-                $('#sidebar').html(temp);
-                });
-            })
-            .fail(function(xhr) {
-                console.log("Error: " + xhr.statusText);
-                alert("Error: " + xhr.statusText);
-            });
+        $.get(url, function (data) {
+            temp = data;
+            $('#sidebar').html(temp);
+        });
 
         e.preventDefault();
         return false;
@@ -29,21 +21,12 @@ $(document).ready(function () {
     $('.delete-icon').click(function(e){
 
         var cat_id = $(e.target).closest('label').attr('for');
-        $.post("",
-            {
-                task:"AJAX_DELETE_CATEGORY",
-                id:cat_id
-            },
-            function () {
-                $.get('/explorer/sidebar/favourites/'  , function(data) {
-                temp = data;
-                $('#sidebar').html(temp);
-                });
-            })
-            .fail(function(xhr){
-                console.log("Error: " + xhr.statusText);
-                alert("Error: " + xhr.statusText);
-            });
+        var url = baseurl.concat("AJAX_DELETE_CATEGORY","&id=",cat_id)
+
+        $.get(url, function (data) {
+            temp = data;
+            $('#sidebar').html(temp);
+        });
 
         e.preventDefault();
         return false;
@@ -52,21 +35,11 @@ $(document).ready(function () {
     $('.share-icon').click(function(e){
 
         var cat_id = $(e.target).closest('label').attr('for');
-        $.post("",
-            {
-                task:"AJAX_SHARE_CATEGORY",
-                id:cat_id
-            },
-            function () {
-                $.get('/explorer/sidebar/favourites/'  , function(data) {
-                temp = data;
-                $('#sidebar').html(temp);
-                });
-            })
-            .fail(function(xhr){
-                console.log("Error: " + xhr.statusText);
-                alert("Error: " + xhr.statusText);
-            });
+        var url = baseurl.concat("AJAX_SHARE_CATEGORY","&id=",cat_id)
+        $.get(url, function (data) {
+            temp = data;
+            $('#sidebar').html(temp);
+        });
 
         e.preventDefault();
         return false;
@@ -84,22 +57,11 @@ $(document).ready(function () {
             if (e.which == 13) { //Enter pressed
                 var cat_id = $(e.target).closest('label').attr('for');
                 var name = editableText.val();
-                $.post("",
-                    {
-                        task:"AJAX_RENAME_CATEGORY",
-                        id:cat_id,
-                        new_name:name
-                    },
-                    function () {
-                        $.get('/explorer/sidebar/favourites/'  , function(data) {
-                        temp = data;
-                        $('#sidebar').html(temp);
-                        });
-                    })
-                    .fail(function(xhr){
-                        console.log("Error: " + xhr.statusText);
-                        alert("Error: " + xhr.statusText);
-                    });
+                var url = baseurl.concat("AJAX_RENAME_CATEGORY","&id=",cat_id,"&name=",name)
+                $.get(url, function (data) {
+                    temp = data;
+                    $('#sidebar').html(temp);
+                });
             }
         });
     });
@@ -107,21 +69,11 @@ $(document).ready(function () {
     $('.fav-delete-icon').click(function(e) {
 
         var topic_id = $(e.target).data('id');
-        $.post("",
-            {
-                task:"AJAX_DELETE_FAVOURITE",
-                id:topic_id
-            },
-            function () {
-                $.get('/explorer/sidebar/favourites/'  , function(data) {
-                temp = data;
-                $('#sidebar').html(temp);
-                });
-            })
-            .fail(function(xhr){
-                console.log("Error: " + xhr.statusText);
-                alert("Error: " + xhr.statusText);
-            });
+        var url = baseurl.concat("AJAX_DELETE_FAVOURITE","&id=",topic_id)
+        $.get(url, function (data) {
+            temp = data;
+            $('#sidebar').html(temp);
+        });
 
         e.preventDefault();
         return false;
