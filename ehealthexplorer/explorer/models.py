@@ -25,6 +25,7 @@ class Category(models.Model):
     slug = models.SlugField(default="")
     id = models.AutoField(primary_key=True)
     shared = models.BooleanField(default=False)
+    time_shared = models.DateTimeField(default=None,null=True,blank=True)
 
     def save(self, *args, **kwargs):
         # Uncomment if you don't want the slug to change every time the name changes
@@ -41,6 +42,7 @@ class Page(models.Model):
     title = models.CharField(max_length=128)
     summary = models.CharField(max_length=300)
     url = models.URLField(default="")
+    id = models.AutoField(primary_key=True)
 
     flesch_score = models.IntegerField(default =0)
     polarity_score=models.IntegerField(default=0)

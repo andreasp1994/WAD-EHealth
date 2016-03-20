@@ -1,11 +1,17 @@
-<script src="{{ STATIC_URL }}js/ajax-favourites.js"></script>
+<script src="{{ STATIC_URL }}js/ajax-shared.js"></script>
+<script src="{{ STATIC_URL }}js/showonhover.js"></script>
 
 <div class="row fav-container">
     <div class="col-md-12">
 
+        <input  id="search52" name="q" type="text" placeholder="Search..." value="{{ query }}"/>
+
+        <p class="sidebar-header"> Shared Categories</p>
+
         <ul class="cat-list">
-            {% if categories %}
-                    {% for category in categories %}
+
+            {% if shared_categories %}
+                    {% for category in shared_categories %}
 
                         <li>
                         <input type="checkbox" class="fav-check" id="{{ category.id }}" />
@@ -13,23 +19,19 @@
                             <span id="cat_name">
                             {{ category.name }}
                             </span>
-
-                            {% if category.shared %}
-                                <img src="{{ STATIC_URL }}icons/shared_ico.png" class="share-icon"/>
-                            {% else %}
-                                <img src="{{ STATIC_URL }}icons/not_shared_ico.png" class="share-icon"/>
-                            {% endif %}
-                            <img src="{{ STATIC_URL }}icons/rename_ico.png" class="rename-icon"/>
-                            <img src="{{ STATIC_URL }}icons/delete_ico.png" class="delete-icon"/>
-
+                            <span class="small-type">Shared by: {{ category.user }}</span>
                         </label>
+
 
                            <ul class="fav-list">
 
                                     <div class="col-md-12 fav-page-container">
                                         {%  if category.saved %}
                                             {% for result in category.saved %}
-                                                <li><a href="{{ result.url }}">{{ result.title }}</a> <img data-id="{{ result.id }}" src="{{ STATIC_URL }}icons/delete_ico.png" class="fav-delete-icon"/></li>
+                                                <li><a href="{{ result.url }}">{{ result.title }}</a>
+                                                <img data-id="{{ result.id }}" src="{{ STATIC_URL }}icons/more_ico.png" class="fav-more-icon"/>
+                                                </li>
+
                                             {% endfor %}
 
                                         {% else %}
@@ -43,14 +45,10 @@
                     {% endfor %}
 
             {% else %}
-                <strong>No Categories currently in category.</strong>
+                <strong>No shared user defined categories.</strong>
 
                 <br />
             {% endif %}
-
-                    <label id="add-cat" class="add-cat">
-                            Add new category...
-                    </label>
 
         </ul>
     </div>

@@ -5,9 +5,10 @@
 
     <!-- bootstrap 3.0.0 -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">-->
 
     <link rel="stylesheet" href="{{ STATIC_URL }}style.css" />
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
     <script language="javascript">var STATIC_URL = "{{ STATIC_URL }}";</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -47,6 +48,8 @@
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-menu-hamburger"></a>
                         <ul class="dropdown-menu main-menu">
                             <li><a href="#" data-link="{% url 'search_sidebar' %}">Search</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-link="{% url 'search_categories'%}">Search Categories</a></li>
                             <li class="divider"></li>
                             {% if user.is_authenticated %}
                                 <li><a href="#" data-link="{%  url 'favourites_sidebar' %}">Favourites</a></li>
@@ -101,7 +104,7 @@
     <script>
 
         $('.main-menu li a').click(function () {
-           var img =  Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+           var img =  Math.floor(Math.random() * (5 - 1 + 1)) + 1;
             var url = STATIC_URL + "backgrounds/" + img + ".png";
             $.backstretch(url, {fade:1000});
         });
