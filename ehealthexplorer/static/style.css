@@ -315,6 +315,7 @@ a.glyphicon {
     transition: all .2s ease-in-out;
     font-size: 30px;
     margin-left: 20px ;
+    position: relative;
 }
 
 .predefined-terms-info span.glyphicon:hover {
@@ -340,6 +341,10 @@ a.glyphicon {
      display: inline;
 }
 
+.left {
+    position: relative;
+    left:-300px; !important;
+}
 
 /*****************
 Search styling
@@ -438,3 +443,34 @@ Shared cateegories styling
     -webkit-transition: all 0.7s ease 0s;
 }
 
+
+/*******************
+Results styling
+*********************/
+.results:hover {
+    background-color: #e1e1e1;
+}
+
+.results-sidebar-container {
+    padding: 15px;
+}
+
+.slider-container {
+    padding: 20px;
+}
+
+.noUi-connect {
+    background: #31b0d5 !important;
+}
+
+.lower-value {
+    display: inline-block;
+}
+
+.upper-value {
+    display: inline-block;
+    float: right;
+}
+.apply-filters {
+    font-size: 20px;
+}

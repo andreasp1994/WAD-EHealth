@@ -9,7 +9,7 @@ def run_healthfinder_query(search_terms):
     search_type = 'Search.json'
     
     query = urllib2.quote(search_terms)
-    print query
+
     
     search_url = "{0}{1}?api_key={2}&keyword={3}".format(
         root_url,
@@ -23,12 +23,13 @@ def run_healthfinder_query(search_terms):
     
     try:
         response = urllib2.urlopen(search_url).read()
-        print response
+
         json_response = json.loads(response)
         
         
         for result in json_response["Result"]["Topics"]:
             summary = result["Sections"][0]["Description"]
+
             blobSummary = TextBlob(summary)
             results.append({
                 'title':result["Title"],

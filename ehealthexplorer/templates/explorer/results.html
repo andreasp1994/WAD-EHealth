@@ -21,7 +21,8 @@
                 <h4>
                     <ol>
                     {% for result in results %}
-                        <li><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
+                        <li class="results">
+                            <a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
                             <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }} Source: {{ result.source }}</h6>
                         </li>
                     {% endfor %}
@@ -38,7 +39,7 @@
                 <h4>
                     <ol>
                     {% for result in bing %}
-                        <li><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
+                        <li class="results"><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
                             <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
                         </li>
                     {% endfor %}
@@ -56,7 +57,7 @@
                 <h4>
                     <ol>
                     {% for result in medLine %}
-                        <li><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
+                        <li class="results"><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
                             <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
                         </li>
                     {% endfor %}
@@ -74,7 +75,7 @@
                 <h4>
                     <ol>
                     {% for result in healthFinder %}
-                        <li><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
+                        <li class="results"><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
                             <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
                         </li>
                     {% endfor %}
@@ -98,71 +99,7 @@
  -->
 
 {% block side_block %}
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<script src="{{ STATIC_URL }}js/auto-complete.js"></script>
-    <div class="row " >
 
-    		<!--<h2 class="search-text">Search</h2>-->
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <span class="input-group-btn">
-                         <form class="form-inline" id="search_form" method="post" action="{% url 'results' %}">
-                             {% csrf_token %}
-                             <div class="col-md-2 no-gutter">
-                                <button class="btn btn-info btn-lg" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                             </div>
-                             <div class="col-md-8 col-md-offset-2 no-gutter">
-                                <label for="search_box"></label>
-                                <input id="search_box" name="query" type="text" class="form-control input-lg" placeholder="Search..." />
-                             </div>
-                         </form>
-                    </span>
-                </div>
-            </div>
-        </div>
+    {% include 'explorer/results_sidebar.html' %}
 
-    <h3>Ratings summary</h3>
-    <div class="col-md-12">
-        <div class="col-md-4">
-        <div class="predefined-terms-info">
-             <span id="test" class="glyphicon glyphicon-question-sign"><span class="popup">
-                90+   : Very Easy</br>
-                80-89 : Easy</br>
-                70-79 : Fairly Easy</br>
-                60-69 : Standard</br>
-                50-59 : Fairly Difficult</br>
-                30-49 : Difficult</br>
-                0-29  : Very Difficult</br>
-             </span> </span>
-        </div>
-        </div>
-        <div class="col-md-4">
-        <div class="predefined-terms-info">
-             <span id="test" class="glyphicon glyphicon-question-sign"> <span class="popup">
-                 1 : Very positive</br>
-                 0.5 : Fairly positive</br>
-                 0 : Neutral</br>
-                -0.5 : Fairly negative</br>
-                -1 : Very negative</br>
-             </span> </span>
-        </div>
-        </div>
-        <div class="col-md-4">
-        <div class="predefined-terms-info">
-            <span id="test" class="glyphicon glyphicon-question-sign"> <span class="popup">
-                1 : Subjective</br>
-                0.5 : Neutral</br>
-                0 : Objective</br>
-            </span></span>
-        </div>
-        </div>
-    </div>
-
-    
-
-
- 
 {% endblock %}

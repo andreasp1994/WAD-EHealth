@@ -45,6 +45,11 @@ def results(request):
     response = render(request,'explorer/results.html',context_dict)   
     return response
 
+def results_sidebar(request):
+    context_dict={}
+    response = render(request, 'explorer/results_sidebar.html', context_dict)
+    return response
+
 @login_required
 def favourites_sidebar(request):
     context_dict={}
