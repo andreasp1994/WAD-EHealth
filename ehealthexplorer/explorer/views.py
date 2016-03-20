@@ -93,7 +93,7 @@ def results(request):
                   'medLine':medLine_results,
                   'healthFinder':healthFinder_results 
                  } ## Placeholder until search function can be implemented
-    
+
 
     if request.user.is_authenticated():
         if request.method == "POST":
