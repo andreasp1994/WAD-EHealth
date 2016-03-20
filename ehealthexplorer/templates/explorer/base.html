@@ -49,7 +49,7 @@
                         <ul class="dropdown-menu main-menu">
                             <li><a href="#" data-link="{% url 'search_sidebar' %}">Search</a></li>
                             <li class="divider"></li>
-                            <li><a href="#" data-link="{% url 'search_categories' 'default'%}">Search Categories</a></li>
+                            <li><a href="#" data-link="{% url 'search_categories'%}">Search Categories</a></li>
                             <li class="divider"></li>
                             {% if user.is_authenticated %}
                                 <li><a href="#" data-link="{%  url 'favourites_sidebar' %}">Favourites</a></li>

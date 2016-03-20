@@ -69,7 +69,7 @@ def index(request):
     response = render(request,'explorer/index.html', context_dict )
     return response
 
-
+@csrf_exempt
 def results(request):
 
     query = 'common cold'.strip()     
@@ -115,6 +115,10 @@ def favourites_sidebar(request):
 def search_sidebar(request):
 
     context_dict={}
+
+    medicine_list = ['Lipitor','Nexium','Plavix','Advair','Abilify','Seroquel',
+                    'Singulair','Crestor','Actos']
+
     response = render(request, 'explorer/search_sidebar.html', context_dict)
     return response
 
@@ -131,11 +135,18 @@ def settings_sidebar(request):
     return response
 
 
-def search_categories(request, query):
-    print query
+def search_categories(request):
+
     context_dict = {}
 
-    if (query == "default"):
+    query = request.GET.get('q')
+
+    if query == None:
+        query = ""
+
+    context_dict['query'] = query
+
+    if (query == ""):
         shared_categories = Category.objects.filter(shared=True)
     else:
         shared_categories = Category.objects.filter(shared=True, name__contains=query)

@@ -8,6 +8,6 @@ urlpatterns = patterns('',
         url(r'^sidebar/profile',views.profile_sidebar,name='profile_sidebar'),
         url(r'^results/$', views.results, name='results'),
         url(r'^sidebar/settings', views.settings_sidebar, name='settings_sidebar'),
-        url(r'^sidebar/shared/(?P<query>\w+)/$', views.search_categories, name='search_categories'),
+        url(r'^sidebar/shared/$', views.search_categories, name='search_categories'),
 
 )

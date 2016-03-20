@@ -1,14 +1,15 @@
 <script src="{{ STATIC_URL }}js/ajax-shared.js"></script>
+<script src="{{ STATIC_URL }}js/showonhover.js"></script>
 
 <div class="row fav-container">
     <div class="col-md-12">
 
-        <input  id="search52" name="q" type="text" placeholder="Search..." />
+        <input  id="search52" name="q" type="text" placeholder="Search..." value="{{ query }}"/>
 
         <p class="sidebar-header"> Shared Categories</p>
 
         <ul class="cat-list">
-            {{ query }}
+
             {% if shared_categories %}
                     {% for category in shared_categories %}
 
@@ -28,11 +29,8 @@
                                         {%  if category.saved %}
                                             {% for result in category.saved %}
                                                 <li><a href="{{ result.url }}">{{ result.title }}</a>
-                                                <img data-id="{{ result.id }}" src="{{ STATIC_URL }}icons/more_ico.png" class="fav-more-icon"/></li>
-
-                                                <div class="result-details">
-
-                                                </div>
+                                                <img data-id="{{ result.id }}" src="{{ STATIC_URL }}icons/more_ico.png" class="fav-more-icon"/>
+                                                </li>
 
                                             {% endfor %}
 
