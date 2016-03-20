@@ -6,8 +6,7 @@ from django.http import HttpResponse
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import get_user
-from models import Category
-import random
+from models import Category, Searcher
 from operator import itemgetter
 
 @csrf_exempt
@@ -66,7 +65,8 @@ def index(request):
 
 def results(request):
 
-    query = 'common cold'.strip()     
+    search_term = request.POST['query']
+    query = search_term.strip()
     
     bing_results=[]
     medLine_results=[]

@@ -392,6 +392,7 @@ Settings styling
     height: 100px;
 }
 
-.btns {
-
+.no-gutter {
+    padding-right:0;
+    padding-left:0;
 }

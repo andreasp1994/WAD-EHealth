@@ -1,6 +1,8 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from registration.signals import user_registered
+from django.dispatch.dispatcher import receiver
 
 class Searcher(models.Model):
     # This line is required. Links UserProfile to a User model instance.
@@ -46,3 +48,9 @@ class Page(models.Model):
 
     def __unicode__(self):      #For Python 2, use __str__ on Python 3
         return self.title
+
+@receiver(user_registered)
+def callback(sender, **kwargs):
+    user = kwargs.pop('user')
+    searcher = Searcher.objects.get_or_create(user=user)[0]
+    searcher.save()
