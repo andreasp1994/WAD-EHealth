@@ -477,3 +477,7 @@ Results styling
 .apply-filters {
     font-size: 20px;
 }
+
+#cat-li {
+    cursor: pointer;
+}

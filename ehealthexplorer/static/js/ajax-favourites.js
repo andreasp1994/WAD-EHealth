@@ -21,7 +21,7 @@ $(document).ready(function () {
     $('.delete-icon').click(function(e){
 
         var cat_id = $(e.target).closest('label').attr('for');
-        var url = baseurl.concat("AJAX_DELETE_CATEGORY","&id=",cat_id)
+        var url = baseurl.concat("AJAX_DELETE_CATEGORY","&id=",cat_id);
 
         $.get(url, function (data) {
             temp = data;
@@ -35,7 +35,7 @@ $(document).ready(function () {
     $('.share-icon').click(function(e){
 
         var cat_id = $(e.target).closest('label').attr('for');
-        var url = baseurl.concat("AJAX_SHARE_CATEGORY","&id=",cat_id)
+        var url = baseurl.concat("AJAX_SHARE_CATEGORY","&id=",cat_id);
         $.get(url, function (data) {
             temp = data;
             $('#sidebar').html(temp);
@@ -46,7 +46,7 @@ $(document).ready(function () {
     });
 
     $('.rename-icon').click(function(e) {
-        var element = $(e.target).parent().find("span")
+        var element = $(e.target).parent().find("span");
         var editableText = $("<input type='text' />");
         editableText.addClass('my-editable');
         editableText.val(element.html().trim());
@@ -57,7 +57,7 @@ $(document).ready(function () {
             if (e.which == 13) { //Enter pressed
                 var cat_id = $(e.target).closest('label').attr('for');
                 var name = editableText.val();
-                var url = baseurl.concat("AJAX_RENAME_CATEGORY","&id=",cat_id,"&name=",name)
+                var url = baseurl.concat("AJAX_RENAME_CATEGORY","&id=",cat_id,"&name=",name);
                 $.get(url, function (data) {
                     temp = data;
                     $('#sidebar').html(temp);
@@ -69,7 +69,7 @@ $(document).ready(function () {
     $('.fav-delete-icon').click(function(e) {
 
         var topic_id = $(e.target).data('id');
-        var url = baseurl.concat("AJAX_DELETE_FAVOURITE","&id=",topic_id)
+        var url = baseurl.concat("AJAX_DELETE_FAVOURITE","&id=",topic_id);
         $.get(url, function (data) {
             temp = data;
             $('#sidebar').html(temp);

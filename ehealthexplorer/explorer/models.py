@@ -44,9 +44,9 @@ class Page(models.Model):
     url = models.URLField(default="")
     id = models.AutoField(primary_key=True)
 
-    flesch_score = models.IntegerField(default=0)
-    polarity_score=models.IntegerField(default=0)
-    subjectivity_score=models.IntegerField(default=0)
+    flesch_score = models.DecimalField(max_digits=5,decimal_places=2,default=0.00)
+    polarity_score=models.DecimalField(max_digits=3,decimal_places=2,default=0.00)
+    subjectivity_score=models.DecimalField(max_digits=3,decimal_places=2,default=0.00)
 
     def __unicode__(self):      #For Python 2, use __str__ on Python 3
         return self.title

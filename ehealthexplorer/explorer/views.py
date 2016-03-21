@@ -100,6 +100,16 @@ def favourites_sidebar(request):
             page = Page.objects.filter(id=id).get()
             page.delete()
 
+    elif (task == "AJAX_SAVE_TO"):
+            c = Category.objects.filter(user=get_user(request),name=request.GET['name']).get()
+            page = Page.objects.create(category=c,title=request.GET['title'])
+            page.summary = request.GET['summary']
+            page.url = request.GET['url']
+            page.flesch_score = request.GET['read']
+            page.polarity_score = request.GET['pola']
+            page.subjectivity_score = request.GET['subj']
+            page.save()
+
     if request.user.is_authenticated():
         category_list = Category.objects.filter(user=get_user(request))
         for cat in category_list:

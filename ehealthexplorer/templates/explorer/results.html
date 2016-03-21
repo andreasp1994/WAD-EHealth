@@ -16,7 +16,7 @@
 
     <div class="tab-content">
         <div id="results" class="tab-pane fade in active">
-            <h3>All results</h3>
+                <h3>All results</h3>
             {% if results %}
                 <h4>
                     <ol>
@@ -36,11 +36,13 @@
                             {% if categories %}
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     {% for category in categories %}
-                                        <li role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
+                                        <li id="cat-li" role="presentation"><a data-target="#" role="menuitem" tabindex="-1">{{ category.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             {% else %}
-
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">No Categories Present</a></li>
+                                </ul>
                             {% endif %}
                         </div>
                     {% endfor %}
@@ -68,11 +70,17 @@
                         </div>
                         <div id="save-to" class="dropdown list col-md-1">
                             <span class="dropdown-toggle glyphicon glyphicon-heart heart" data-toggle="dropdown"></span>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-                            </ul>
+                            {% if categories %}
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    {% for category in categories %}
+                                        <li id="cat-li" role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">No Categories Present</a></li>
+                                </ul>
+                            {% endif %}
                         </div>
                     {% endfor %}
                     </ol>
@@ -100,11 +108,17 @@
                         </div>
                         <div id="save-to" class="dropdown list col-md-1">
                             <span class="dropdown-toggle glyphicon glyphicon-heart heart" data-toggle="dropdown"></span>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-                            </ul>
+                            {% if categories %}
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    {% for category in categories %}
+                                        <li id="cat-li" role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">No Categories Present</a></li>
+                                </ul>
+                            {% endif %}
                         </div>
                     {% endfor %}
                     </ol>
@@ -132,11 +146,17 @@
                         </div>
                         <div id="save-to" class="dropdown list col-md-1">
                             <span class="dropdown-toggle glyphicon glyphicon-heart heart" data-toggle="dropdown"></span>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-                            </ul>
+                            {% if categories %}
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    {% for category in categories %}
+                                        <li id="cat-li" role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">No Categories Present</a></li>
+                                </ul>
+                            {% endif %}
                         </div>
                     {% endfor %}
                     </ol>
