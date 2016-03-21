@@ -3,7 +3,7 @@ $(document).ready(function () {
     var readability = document.getElementById('readability');
     noUiSlider.create(readability, {
 
-        start: [0, 100],
+        start: [rl, ru],
         connect: true,
         range: {
             'min': 0,
@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     var polarity = document.getElementById('polarity');
     noUiSlider.create(polarity, {
-        start: [0, 100],
+        start: [pl, pu],
         connect: true,
         range: {
             'min': 0,
@@ -36,7 +36,7 @@ $(document).ready(function () {
 
     var subjectivity = document.getElementById('subjectivity');
     noUiSlider.create(subjectivity, {
-        start: [0, 100],
+        start: [sl, su],
         connect: true,
         range: {
             'min': 0,
@@ -50,4 +50,26 @@ $(document).ready(function () {
 
     subjectivity.noUiSlider.on('update', function( values, handle ) {
 	subSnapValues[handle].innerHTML = values[handle];});
+
+
+
+    $('.apply-filters').click(function(){
+        var query = $('#search_box').val();
+
+        var readability_values = readability.noUiSlider.get();
+        var subjectivity_values = subjectivity.noUiSlider.get();
+        var polarity_values = polarity.noUiSlider.get();
+
+        var baseurl = "/explorer/results/?";
+
+        window.location = baseurl.concat("rl=",readability_values[0],
+                                "&ru=",readability_values[1],
+                                "&sl=",subjectivity_values[0],
+                                "&su=",subjectivity_values[1],
+                                "&pl=",polarity_values[0],
+                                "&pu=",polarity_values[1],
+                                "&q=",query)
+    });
+
+
 });

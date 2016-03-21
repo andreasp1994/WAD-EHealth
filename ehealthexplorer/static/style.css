@@ -271,13 +271,14 @@ End of favourites styling
     height: 60px;
     width: 100%;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .predefined-search-tabs li a{
     transition: all .2s ease-in-out;
     color: #000000;
     font-size: 20px;
-    line-height: 50px;
+
 }
 
 .predefined-search-tabs li.active a{
@@ -455,7 +456,7 @@ Results styling
 }
 
 .results-sidebar-container {
-    padding: 15px;
+    padding: 25px;
 }
 
 .slider-container {

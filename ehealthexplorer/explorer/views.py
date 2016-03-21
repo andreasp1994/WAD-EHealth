@@ -14,14 +14,33 @@ def index(request):
 
     context_dict = {}
 
+
+    medicine_list = ['Lipitor','Nexium','Plavix','Advair','Abilify','Seroquel',
+                    'Singulair','Crestor','Actos']
+    context_dict['medicines'] = medicine_list
+
     response = render(request,'explorer/index.html', context_dict )
     return response
 
 @csrf_exempt
 def results(request):
 
-    search_term = request.POST['query']
+    search_term = request.GET['q']
     query = search_term.strip()
+
+    ############################################
+    # Subjectivity, Polarity, readability values
+    ############################################
+    read_lower = request.GET['rl']
+    read_upper = request.GET['ru']
+
+    sub_lower = request.GET['sl']
+    sub_upper = request.GET['su']
+
+    pol_lower = request.GET['pl']
+    pol_upper = request.GET['pu']
+
+    print read_lower, read_upper, sub_lower, sub_upper, pol_lower, pol_upper
 
     bing_results=[]
     medLine_results=[]
@@ -47,6 +66,13 @@ def results(request):
         category_list = Category.objects.filter(user=get_user(request))
         context_dict['categories'] = category_list
     context_dict['query'] = query
+
+    context_dict['rl'] = read_lower
+    context_dict['ru'] = read_upper
+    context_dict['sl'] = sub_lower
+    context_dict['su'] = sub_upper
+    context_dict['pl'] = pol_lower
+    context_dict['pu'] = pol_upper
 
     response = render(request,'explorer/results.html',context_dict)   
     return response
@@ -117,6 +143,14 @@ def search_sidebar(request):
 
     medicine_list = ['Lipitor','Nexium','Plavix','Advair','Abilify','Seroquel',
                     'Singulair','Crestor','Actos']
+    context_dict['medicines'] = medicine_list
+
+    treatments_procedures_list = ['Antinuclear Antibody Test','CAT Scan','Chemotherapy','Colonoscopy','Complete Blood Count',
+                         'Coronary Artery Bypass Graft (CABG)','Cortisone Injection','Creatinine Blood Test',
+                         'Electrolytes','Lap Band Surgery (Gastric Banding)','Liver Blood Test','MRI Scan',
+                         'Thyroid Blood Tests','Total Hip Replacement','Total Knee Replacement','Tuberculosis Skin Test (PPD Skin Test)',
+                         'Ultrasound']
+    context_dict['treatandproc'] = treatments_procedures_list
 
     response = render(request, 'explorer/search_sidebar.html', context_dict)
     return response

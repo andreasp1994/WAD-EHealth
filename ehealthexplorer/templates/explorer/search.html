@@ -14,7 +14,7 @@
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
                     <span class="input-group-btn">
-                         <form class="form-inline" id="search_form" method="post" action="{% url 'results' %}">
+                         <form class="form-inline" id="search_form" method="get" action="{% url 'results' %}">
                              {% csrf_token %}
 
                                  <div class="col-md-2 no-gutter">
@@ -24,7 +24,16 @@
                                  </div>
                                  <div class="col-md-10 no-gutter">
                                      <label for="search_box"></label>
-                                 <input id="search_box" name="query" type="text" class="form-control input-lg" placeholder="Search..." />
+                                    <input id="search_box" name="q" type="text" class="form-control input-lg" placeholder="Search..." />
+
+                                     <input type="hidden" name="rl" value="0"/>
+                                     <input type="hidden" name="ru" value="100"/>
+
+                                     <input type="hidden" name="sl" value="0"/>
+                                     <input type="hidden" name="su" value="100"/>
+
+                                     <input type="hidden" name="pl" value="0"/>
+                                     <input type="hidden" name="pu" value="100"/>
                                  </div>
 
                          </form>
@@ -40,3 +49,4 @@
 
 
 {% endblock %}
+

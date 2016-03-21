@@ -26,16 +26,16 @@
                 <div class="tab-content">
                     <div class="tab-pane" id="treatments">
                         <ul class="predefined-search-tabs">
-                            <li><a  href="#">treatment1</a></li>
-                            <li><a href="#">treatment2</a></li>
-                            <li><a href="#">treatment3</a></li>
+                            {% for tnp in treatandproc %}
+                                <li><a  href="#">{{ tnp }}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="tab-pane active" id="medicines">
                         <ul class="predefined-search-tabs">
-                            <li><a  href="#">medicine1</a></li>
-                            <li><a href="#">medicine2</a></li>
-                            <li><a href="#">medicine3</a></li>
+                            {% for med in medicines %}
+                                <li><a  href="#">{{ med }}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="tab-pane" id="messages">Messages Tab.</div>
