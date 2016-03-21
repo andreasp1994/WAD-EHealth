@@ -9,7 +9,7 @@
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
                     <span class="input-group-btn">
-                         <form class="form-inline" id="search_form" method="post" action="{% url 'results' %}">
+                         <form class="form-inline" id="search_form" method="get" action="{% url 'results' %}">
                              {% csrf_token %}
                              <div class="col-md-2 no-gutter">
                                  <button id ='search_button' class="btn btn-info btn-lg" type="submit">
@@ -18,7 +18,17 @@
                                  </div>
                                  <div class="col-md-10 no-gutter">
                                      <label for="search_box"></label>
-                                 <input id="search_box" name="query" type="text" class="form-control input-lg" placeholder="Search..." value="{{ query }}"/>
+
+                                      <input type="hidden" name="rl" value="0"/>
+                                     <input type="hidden" name="ru" value="100"/>
+
+                                     <input type="hidden" name="sl" value="0"/>
+                                     <input type="hidden" name="su" value="1"/>
+
+                                     <input type="hidden" name="pl" value="-1"/>
+                                     <input type="hidden" name="pu" value="1"/>
+
+                                 <input id="search_box" name="q" type="text" class="form-control input-lg" placeholder="Search..." value="{{ query }}"/>
                                  </div>
                          </form>
                     </span>
@@ -52,7 +62,7 @@
                 </div>
                 <br />
                 <span class="lower-value" id="pol-slider-snap-value-lower"></span>
-                <span class="upper-value" id="pol-slider-snap-value-upper"></span>s
+                <span class="upper-value" id="pol-slider-snap-value-upper"></span>
             </div>
 
 

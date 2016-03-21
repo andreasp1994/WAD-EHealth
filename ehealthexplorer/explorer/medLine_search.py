@@ -6,7 +6,12 @@ from textblob import TextBlob
 
 ## pip install xmltodict
 
-def run_medline_query(search_terms):
+def run_medline_query(search_terms, read_min,
+                                     read_max,
+                                     pol_min,
+                                     pol_max,
+                                     sub_min,
+                                     sub_max):
     root_url = 'https://wsearch.nlm.nih.gov/ws/query'
     source = 'healthTopics'
     
@@ -27,17 +32,20 @@ def run_medline_query(search_terms):
         
         for result in response['nlmSearchResult']['list']['document']:
             summary = re.sub('\<.*?>','', result['content'][-1]['#text'])
-
             blobSummary = TextBlob(summary)
-            results.append({
-                'title':re.sub('\<.*?\>','', result['content'][0]['#text']),
-                'url':result['@url'],
-                'summary':re.sub('\<.*?\>','', result['content'][-1]['#text']),
-                'read':textstat.flesch_reading_ease(summary),
-                'pola':("%.2f" % blobSummary.sentiment.polarity),
-                'subj':("%.2f" % blobSummary.sentiment.subjectivity),
-                'source':'MedLine'
-                })
+            read = textstat.flesch_reading_ease(summary)
+            pola = ("%.2f" % blobSummary.sentiment.polarity)
+            subj = ("%.2f" % blobSummary.sentiment.subjectivity)
+            if (read_min <= read <= read_max) and (pol_max - pol_min <= pola) and (sub_max - sub_min <= subj):
+                results.append({
+                    'title':re.sub('\<.*?\>','', result['content'][0]['#text']),
+                    'url':result['@url'],
+                    'summary':re.sub('\<.*?\>','', result['content'][-1]['#text']),
+                    'read':read,
+                    'pola':pola,
+                    'subj':subj,
+                    'source':'MedLine'
+                    })
             
 
     except urllib2.URLError as e:

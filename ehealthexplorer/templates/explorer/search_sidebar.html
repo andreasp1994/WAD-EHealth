@@ -12,8 +12,8 @@
         <div class="col-xs-6 col-md-6 vertical-center"> <!-- required for floating -->
         <!-- Nav tabs -->
         <ul class="predefined-search-tabs">
-            <li><a  href="#treatments" data-toggle="tab">Treatments</a></li>
-            <li class="active"><a href="#medicines" data-toggle="tab">Medicines</a></li>
+            <li><a  href="#medicines" data-toggle="tab">Medicines</a></li>
+            <li class="active"><a href="#conditions" data-toggle="tab">Conditions</a></li>
             <li><a href="#symptoms" data-toggle="tab">Symptoms</a></li>
         </ul>
         </div>
@@ -24,20 +24,30 @@
             <div class="col-xs-offset-6 col-xs-6 col-md-offset-6 col-md-6 vertical-center ">
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div class="tab-pane" id="treatments">
+                    <div class="tab-pane" id="medicines">
                         <ul class="predefined-search-tabs">
                             {% for tnp in treatandproc %}
                                 <li><a  href="#">{{ tnp }}</a></li>
                             {% endfor %}
+
                         </ul>
                     </div>
-                    <div class="tab-pane active" id="medicines">
+                    <div class="tab-pane active" id="conditions">
                         <ul class="predefined-search-tabs">
+
                             {% for med in medicines %}
                                 <li><a  href="#">{{ med }}</a></li>
                             {% endfor %}
+
                         </ul>
                     </div>
+					<div class="tab-pane" id="symptoms">
+						<ul class="predefined-search-tabs">
+							<li><a href="#">Fever</a></li>
+							<li><a href="#">Rash</a></li>
+							<li><a href="#">Pain</a></li>
+						</ul>
+					</div>
                     <div class="tab-pane" id="messages">Messages Tab.</div>
                 </div>
             </div>

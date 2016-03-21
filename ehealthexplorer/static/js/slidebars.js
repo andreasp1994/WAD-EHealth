@@ -23,8 +23,8 @@ $(document).ready(function () {
         start: [pl, pu],
         connect: true,
         range: {
-            'min': 0,
-            'max': 100
+            'min': -1,
+            'max': 1
         }
     });
     var polSnapValues = [
@@ -40,7 +40,7 @@ $(document).ready(function () {
         connect: true,
         range: {
             'min': 0,
-            'max': 100
+            'max': 1
         }
     });
 

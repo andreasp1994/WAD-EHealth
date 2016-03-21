@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Synopsis
 
 ## Installation
@@ -19,6 +20,8 @@ manage.py runserver
 
 Navigate to home page:
 http://127.0.0.1/explorer/
+
+NOTE: Keys are required for Bing and HealthFinder, app is set up to read from keys.py file in the explorer folder
 
 ## Population Script
 
@@ -42,4 +45,14 @@ Joe has one category called Diabetes and contains two pages.
 
 ## Contributors
 
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+2079310R: Emily Raine, 2079310R
+
+npitsillos: Nikolas Pitsillos, 2126280P 
+
+andreasp1994: Antreas Pogiatzis, 2140845P
+
+OrlinODachev: Orlin Dachev, 2131228D 
+
+
+
+

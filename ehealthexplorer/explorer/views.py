@@ -24,6 +24,12 @@ def index(request):
 
 @csrf_exempt
 def results(request):
+    read_min = 0.0
+    read_max = 100.0
+    pol_min = -1.0
+    pol_max = 1.0
+    sub_min = 0.0
+    sub_max = 1.0
 
     search_term = request.GET['q']
     query = search_term.strip()
@@ -47,12 +53,23 @@ def results(request):
     healthFinder_results=[]
 
     if query:
-        bing_results = run_bing_query(query)
-        medLine_results = run_medline_query(query)
         try:
-            healthFinder_results = run_healthfinder_query(query)
-        except TypeError as e:
-            print "Search failed: ", e
+            bing_results = run_bing_query(query, read_min, read_max,
+                                 pol_min, pol_max, sub_min, sub_max)
+        except: 
+            print "Bing search failed"
+            
+        try:  
+            medLine_results = run_medline_query(query, read_min, read_max,
+                                     pol_min, pol_max, sub_min, sub_max)
+        except:
+            print "Medline search failed"
+            
+        try:
+            healthFinder_results = run_healthfinder_query(query, read_min, read_max,
+                                 pol_min, pol_max, sub_min, sub_max)
+        except:
+            print "HealthFinder Search failed"
 
     main_list = (bing_results + medLine_results + healthFinder_results)
     main_list = sorted(main_list, key=itemgetter('read'), reverse=True)
@@ -60,7 +77,7 @@ def results(request):
                   'bing':bing_results,
                   'medLine':medLine_results,
                   'healthFinder':healthFinder_results 
-                 } ## Placeholder until search function can be implemented
+				  }
 
     if request.user.is_authenticated():
         category_list = Category.objects.filter(user=get_user(request))
