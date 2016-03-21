@@ -11,6 +11,7 @@ $(document).ready(function(){
         var summary = upper_div.find('h5').html();
         $('.dropdown-toggle').dropdown();
         $('#cat-li').click(function(){
+            alert('adding cat');
             var cat_name = $(this).find('a').html();
             var baseurl = '/explorer/sidebar/favourites/?task=';
             var url = baseurl.concat("AJAX_SAVE_TO","&title=",title,"&url=",page_url,
