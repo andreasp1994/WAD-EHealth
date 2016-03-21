@@ -76,8 +76,7 @@ def results(request):
     context_dict={'results':main_list, 
                   'bing':bing_results,
                   'medLine':medLine_results,
-                  'healthFinder':healthFinder_results 
-				  }
+                  'healthFinder':healthFinder_results }
 
     if request.user.is_authenticated():
         category_list = Category.objects.filter(user=get_user(request))
@@ -143,6 +142,8 @@ def favourites_sidebar(request):
             page = Page.objects.filter(id=id).get()
             page.delete()
 
+
+    #Load categories and pages
     if request.user.is_authenticated():
         category_list = Category.objects.filter(user=get_user(request))
         for cat in category_list:

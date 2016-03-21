@@ -14,7 +14,7 @@ pip install -r requirements.txt
 Navigate to ehealthexplorer directory and execute the following command to run the population script:
 python populate_explorer.py
 
-Run the django server:
+Run the django server
 manage.py runserver
 
 Navigate to home page:
@@ -27,7 +27,7 @@ NOTE: Keys are required for Bing and HealthFinder, app is set up to read from ke
 Inside the root directory of the application there is a population script which populates some dummy data into the application for demonstration purposes.
 Below there are details about the data populated.
 
-Here is a list of the users created:
+Here is a list of the users created
 Username: jill
 Email: jill@jill.com
 Password: jill

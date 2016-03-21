@@ -6,6 +6,7 @@ $(document).ready(function () {
         $.get($(e.target).data('link')  , function(data) {
             temp = data;
             $('#sidebar').html(temp);
+
         });
     });
 

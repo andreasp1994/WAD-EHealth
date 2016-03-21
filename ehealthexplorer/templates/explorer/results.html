@@ -4,8 +4,13 @@
 
 {% block title %}Results{% endblock %}
 
+{% block top_link_block %}
+    <li><a href="#" data-link="{% url 'results_sidebar' %}">Filters</a></li>
+{% endblock %}
+
 {% block body_block %}
 <script src="{{ STATIC_URL }}js/save-to.js"></script>
+
     <div id="results-container">
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#results">Results</a></li>
@@ -147,6 +152,17 @@
         </div>
     </div>
     </div>
+
+    <script type="text/javascript" >
+        var rl = {{ rl }};
+        var ru = {{ ru }};
+
+        var sl = {{ sl }};
+        var su = {{ su }};
+
+        var pl = {{ pl }};
+        var pu = {{ pu }};
+    </script>
 {% endblock %}
 
 {% block side_block %}

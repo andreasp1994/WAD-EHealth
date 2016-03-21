@@ -49,8 +49,7 @@ $(document).ready(function () {
 	document.getElementById('sub-slider-snap-value-upper')];
 
     subjectivity.noUiSlider.on('update', function( values, handle ) {
-	subSnapValues[handle].innerHTML = values[handle];});
-
+	subSnapValues[handle].innerHTML = values[handle];})
 
 
     $('.apply-filters').click(function(){
