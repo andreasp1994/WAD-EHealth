@@ -61,7 +61,6 @@ def run_bing_query(search_terms):
                 'title':result['Title'],
                 'url':result['Url'],
                 'summary':result['Description'],
-                'read':textstat.flesch_reading_ease(result['Description']),
                 'read':textstat.flesch_reading_ease(summary),
                 'pola':("%.2f" % blobSummary.sentiment.polarity),
                 'subj':("%.2f" % blobSummary.sentiment.subjectivity),

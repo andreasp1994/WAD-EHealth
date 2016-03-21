@@ -27,6 +27,7 @@ def run_medline_query(search_terms):
         
         for result in response['nlmSearchResult']['list']['document']:
             summary = re.sub('\<.*?>','', result['content'][-1]['#text'])
+
             blobSummary = TextBlob(summary)
             results.append({
                 'title':re.sub('\<.*?\>','', result['content'][0]['#text']),
