@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Synopsis
 
 ## Installation
@@ -29,10 +28,17 @@ Inside the root directory of the application there is a population script which 
 Below there are details about the data populated.
 
 Here is a list of the users created:
-Username		Email			Password
-jill			jill@jill.com	jill
-bob				bob@bob.com		bob
-joe				joe@joe.com		joe
+Username: jill
+Email: jill@jill.com
+Password: jill
+
+Username: bob
+Email: bob@bob.com
+Password: bob
+
+Username: joe
+Email: joe@joe.com
+Password: joe
 
 Jill:
 Jill has one category called 'Flu' which is shared and contains two pages.
