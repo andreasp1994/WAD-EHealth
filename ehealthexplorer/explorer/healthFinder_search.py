@@ -32,12 +32,13 @@ def run_healthfinder_query(search_terms, read_min,
         
         
         for result in json_response["Result"]["Topics"]:
+            print "here"
             summary = result["Sections"][0]["Description"]
             blobSummary = TextBlob(summary)
             read = textstat.flesch_reading_ease(summary)
-            pola = ("%.2f" % blobSummary.sentiment.polarity)
-            subj = ("%.2f" % blobSummary.sentiment.subjectivity)
-            if (read_min <= read <= read_max) and (pol_max - pol_min <= pola) and (sub_max - sub_min <= subj):
+            pola = float("%.2f" % blobSummary.sentiment.polarity)
+            subj = float("%.2f" % blobSummary.sentiment.subjectivity)
+            if (read_min <= read <= read_max) and (pol_min <= pola <= pol_max) and (subj <= sub_max and subj >= sub_min):
                 results.append({
                     'title':result["Title"],
                     'url':result["AccessibleVersion"],

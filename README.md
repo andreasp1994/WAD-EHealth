@@ -5,19 +5,24 @@
 Below you can find instruction to install and run the application on your local machine
 
 Run the following command to clone the repository in a local directory:
+<br />
 git clone https://github.com/npitsillos/WAD-EHealth.git
 
 The requirements.txt file contains all the necessary packages for the application to run.
 To install requirements, run in the command prompt:
+<br />
 pip install -r requirements.txt
 
 Navigate to ehealthexplorer directory and execute the following command to run the population script:
+<br />
 python populate_explorer.py
 
 Run the django server
+<br />
 manage.py runserver
 
 Navigate to home page:
+<br />
 http://127.0.0.1/explorer/
 
 NOTE: Keys are required for Bing and HealthFinder, app is set up to read from keys.py file in the explorer folder
@@ -27,7 +32,7 @@ NOTE: Keys are required for Bing and HealthFinder, app is set up to read from ke
 Inside the root directory of the application there is a population script which populates some dummy data into the application for demonstration purposes.
 Below there are details about the data populated.
 
-Here is a list of the users created
+Here is a list of the users created: <br />
 Username: jill
 Email: jill@jill.com
 Password: jill
