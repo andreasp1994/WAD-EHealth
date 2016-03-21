@@ -24,29 +24,28 @@ def index(request):
 
 @csrf_exempt
 def results(request):
-    read_min = 0.0
-    read_max = 100.0
-    pol_min = -1.0
+    read_lower = 0.0
+    read_upper = 100.0
+    pol_lower = -1.0
     pol_max = 1.0
-    sub_min = 0.0
-    sub_max = 1.0
+    sub_upper = 0.0
+    sub_upper = 1.0
 
     search_term = request.GET['q']
     query = search_term.strip()
+    
 
     ############################################
     # Subjectivity, Polarity, readability values
     ############################################
-    read_lower = request.GET['rl']
-    read_upper = request.GET['ru']
+    read_lower = float(request.GET['rl'])
+    read_upper = float(request.GET['ru'])
 
-    sub_lower = request.GET['sl']
-    sub_upper = request.GET['su']
+    sub_lower = float(request.GET['sl'])
+    sub_upper = float(request.GET['su'])
 
-    pol_lower = request.GET['pl']
-    pol_upper = request.GET['pu']
-
-    print read_lower, read_upper, sub_lower, sub_upper, pol_lower, pol_upper
+    pol_lower = float(request.GET['pl'])
+    pol_upper = float(request.GET['pu'])
 
     bing_results=[]
     medLine_results=[]
@@ -54,20 +53,20 @@ def results(request):
 
     if query:
         try:
-            bing_results = run_bing_query(query, read_min, read_max,
-                                 pol_min, pol_max, sub_min, sub_max)
+            bing_results = run_bing_query(query, read_lower, read_upper,
+                                pol_lower, pol_upper, sub_lower, sub_upper)
         except: 
             print "Bing search failed"
             
         try:  
-            medLine_results = run_medline_query(query, read_min, read_max,
-                                     pol_min, pol_max, sub_min, sub_max)
+            medLine_results = run_medline_query(query, read_lower, read_upper,
+                                 pol_lower, pol_upper, sub_lower, sub_upper)
         except:
             print "Medline search failed"
             
         try:
-            healthFinder_results = run_healthfinder_query(query, read_min, read_max,
-                                 pol_min, pol_max, sub_min, sub_max)
+            healthFinder_results = run_healthfinder_query(query, read_lower, read_upper,
+                                pol_lower, pol_upper, sub_lower, sub_upper)
         except:
             print "HealthFinder Search failed"
 
