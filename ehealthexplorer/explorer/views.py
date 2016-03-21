@@ -142,7 +142,7 @@ def favourites_sidebar(request):
             page.delete()
 
     elif (task == "AJAX_SAVE_TO"):
-            c = Category.objects.filter(user=get_user(request),name=request.GET['name']).get()
+            c = Category.objects.filter(id=request.GET['id']).get()
             page = Page.objects.create(category=c,title=request.GET['title'])
             page.summary = request.GET['summary']
             page.url = request.GET['url']

@@ -28,11 +28,11 @@
                     {% for result in results %}
                         <div class="results col-md-11">
                             <li>
-                                <a href="{{ result.url }}">{{ result.title }}</a>
-                                <h5>{{ result.summary }}</h5>
-                                <h6>Readability: <span>{{ result.read }}</span>
-                                    Polarity: <span>{{ result.pola }}</span>
-                                    Subjectivity: <span>{{ result.subj }}</span>
+                                <a id="title" href="{{ result.url }}">{{ result.title }}</a>
+                                <h5 id="summary">{{ result.summary }}</h5>
+                                <h6>Readability: <span id="read">{{ result.read }}</span>
+                                    Polarity: <span id="pola">{{ result.pola }}</span>
+                                    Subjectivity: <span id="subj">{{ result.subj }}</span>
                                     Source: {{ result.source }}</h6>
                             </li>
                         </div>
@@ -41,7 +41,7 @@
                             {% if categories %}
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     {% for category in categories %}
-                                        <li id="cat-li" role="presentation"><a data-target="#" role="menuitem" tabindex="-1">{{ category.name }}</a></li>
+                                        <li id="cat-li" data-cat-id="{{ category.id }}" role="presentation"><a data-target="#" role="menuitem" tabindex="-1">{{ category.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             {% else %}
@@ -66,11 +66,11 @@
                     {% for result in bing %}
                         <div class="col-md-11 results">
                             <li>
-                                <a href="{{ result.url }}">{{ result.title }}</a>
-                                <h5>{{ result.summary }}</h5>
-                                <h6>Readability: <span>{{ result.read }}</span>
-                                    Polarity: <span>{{ result.pola }}</span>
-                                    Subjectivity: <span>{{ result.subj }}</span></h6>
+                                <a id="title" href="{{ result.url }}">{{ result.title }}</a>
+                                <h5 id="summary">{{ result.summary }}</h5>
+                                <h6>Readability: <span id="read">{{ result.read }}</span>
+                                    Polarity: <span id="pola">{{ result.pola }}</span>
+                                    Subjectivity: <span id="subj">{{ result.subj }}</span></h6>
                             </li>
                         </div>
                         <div id="save-to" class="dropdown list col-md-1">
@@ -78,7 +78,7 @@
                             {% if categories %}
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     {% for category in categories %}
-                                        <li id="cat-li" role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
+                                        <li id="cat-li" data-cat-id="{{ category.id }}" role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             {% else %}
@@ -104,9 +104,9 @@
                     {% for result in medLine %}
                         <div class="results col-md-11">
                             <li>
-                                <a href="{{ result.url }}">{{ result.title }}</a>
+                                <a id="title" href="{{ result.url }}">{{ result.title }}</a>
                                 <h5>{{ result.summary }}</h5>
-                                <h6>Readability: <span>{{ result.read }}</span>
+                                <h6>Readability: <span >{{ result.read }}</span>
                                     Polarity: <span>{{ result.pola }}</span>
                                     Subjectivity: <span>{{ result.subj }}</span></h6>
                             </li>
