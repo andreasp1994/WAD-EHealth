@@ -19,6 +19,12 @@ def index(request):
 
 @csrf_exempt
 def results(request):
+    read_min = 0.0
+    read_max = 100.0
+    pol_min = -1.0
+    pol_max = 1.0
+    sub_min = 0.0
+    sub_max = 1.0
 
     search_term = request.POST['query']
     query = search_term.strip()
@@ -28,12 +34,15 @@ def results(request):
     healthFinder_results=[]
 
     if query:
-        bing_results = run_bing_query(query)
-        medLine_results = run_medline_query(query)
+        bing_results = run_bing_query(query, read_min, read_max,
+                                 pol_min, pol_max, sub_min, sub_max)
+        medLine_results = run_medline_query(query, read_min, read_max,
+                                 pol_min, pol_max, sub_min, sub_max)
         try:
-            healthFinder_results = run_healthfinder_query(query)
-        except TypeError as e:
-            print "Search failed: ", e
+            healthFinder_results = run_healthfinder_query(query, read_min, read_max,
+                                 pol_min, pol_max, sub_min, sub_max)
+        except:
+            print "HealthFinder Search failed"
 
     main_list = (bing_results + medLine_results + healthFinder_results)
     main_list = sorted(main_list, key=itemgetter('read'), reverse=True)
