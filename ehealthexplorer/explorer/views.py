@@ -43,6 +43,9 @@ def results(request):
                   'healthFinder':healthFinder_results 
                  } ## Placeholder until search function can be implemented
 
+    if request.user.is_authenticated():
+        category_list = Category.objects.filter(user=get_user(request))
+        context_dict['categories'] = category_list
     context_dict['query'] = query
 
     response = render(request,'explorer/results.html',context_dict)   

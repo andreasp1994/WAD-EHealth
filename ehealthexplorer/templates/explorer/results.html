@@ -5,7 +5,7 @@
 {% block title %}Results{% endblock %}
 
 {% block body_block %}
-
+<script src="{{ STATIC_URL }}js/save-to.js"></script>
     <div id="results-container">
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#results">Results</a></li>
@@ -21,10 +21,28 @@
                 <h4>
                     <ol>
                     {% for result in results %}
-                        <li class="results">
-                            <a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
-                            <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }} Source: {{ result.source }}</h6>
-                        </li>
+                        <div class="results col-md-11">
+                            <li>
+                                <a href="{{ result.url }}">{{ result.title }}</a>
+                                <h5>{{ result.summary }}</h5>
+                                <h6>Readability: <span>{{ result.read }}</span>
+                                    Polarity: <span>{{ result.pola }}</span>
+                                    Subjectivity: <span>{{ result.subj }}</span>
+                                    Source: {{ result.source }}</h6>
+                            </li>
+                        </div>
+                        <div id="save-to" class="dropdown col-md-1 list">
+                            <span class="dropdown-toggle glyphicon glyphicon-heart heart" data-toggle="dropdown"></span>
+                            {% if categories %}
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    {% for category in categories %}
+                                        <li role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+
+                            {% endif %}
+                        </div>
                     {% endfor %}
                     </ol>
                 </h4>
@@ -39,9 +57,23 @@
                 <h4>
                     <ol>
                     {% for result in bing %}
-                        <li class="results"><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
-                            <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
-                        </li>
+                        <div class="col-md-11 results">
+                            <li>
+                                <a href="{{ result.url }}">{{ result.title }}</a>
+                                <h5>{{ result.summary }}</h5>
+                                <h6>Readability: <span>{{ result.read }}</span>
+                                    Polarity: <span>{{ result.pola }}</span>
+                                    Subjectivity: <span>{{ result.subj }}</span></h6>
+                            </li>
+                        </div>
+                        <div id="save-to" class="dropdown list col-md-1">
+                            <span class="dropdown-toggle glyphicon glyphicon-heart heart" data-toggle="dropdown"></span>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+                            </ul>
+                        </div>
                     {% endfor %}
                     </ol>
                 </h4>
@@ -57,9 +89,23 @@
                 <h4>
                     <ol>
                     {% for result in medLine %}
-                        <li class="results"><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
-                            <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
-                        </li>
+                        <div class="results col-md-11">
+                            <li>
+                                <a href="{{ result.url }}">{{ result.title }}</a>
+                                <h5>{{ result.summary }}</h5>
+                                <h6>Readability: <span>{{ result.read }}</span>
+                                    Polarity: <span>{{ result.pola }}</span>
+                                    Subjectivity: <span>{{ result.subj }}</span></h6>
+                            </li>
+                        </div>
+                        <div id="save-to" class="dropdown list col-md-1">
+                            <span class="dropdown-toggle glyphicon glyphicon-heart heart" data-toggle="dropdown"></span>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+                            </ul>
+                        </div>
                     {% endfor %}
                     </ol>
                 </h4>
@@ -75,9 +121,23 @@
                 <h4>
                     <ol>
                     {% for result in healthFinder %}
-                        <li class="results"><a href="{{ result.url }}">{{ result.title }}</a><h5>{{ result.summary }}</h5>
-                            <h6>Readability: {{ result.read }} Polarity: {{ result.pola }} Subjectivity: {{ result.subj }}</h6>
-                        </li>
+                        <div class="results col-md-11">
+                            <li>
+                                <a href="{{ result.url }}">{{ result.title }}</a>
+                                <h5>{{ result.summary }}</h5>
+                                <h6>Readability: <span>{{ result.read }}</span>
+                                    Polarity: <span>{{ result.pola }}</span>
+                                    Subjectivity: <span>{{ result.subj }}</span></h6>
+                            </li>
+                        </div>
+                        <div id="save-to" class="dropdown list col-md-1">
+                            <span class="dropdown-toggle glyphicon glyphicon-heart heart" data-toggle="dropdown"></span>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+                            </ul>
+                        </div>
                     {% endfor %}
                     </ol>
                 </h4>

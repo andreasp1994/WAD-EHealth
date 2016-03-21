@@ -443,7 +443,10 @@ Shared cateegories styling
     -webkit-transition: all 0.7s ease 0s;
 }
 
-
+.heart:hover {
+    transition: .2s;
+    font-size: 35px;
+}
 /*******************
 Results styling
 *********************/
