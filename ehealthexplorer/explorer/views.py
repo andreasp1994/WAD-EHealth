@@ -34,10 +34,18 @@ def results(request):
     healthFinder_results=[]
 
     if query:
-        bing_results = run_bing_query(query, read_min, read_max,
+        try:
+            bing_results = run_bing_query(query, read_min, read_max,
                                  pol_min, pol_max, sub_min, sub_max)
-        medLine_results = run_medline_query(query, read_min, read_max,
-                                 pol_min, pol_max, sub_min, sub_max)
+        except: 
+            print "Bing search failed"
+            
+        try:  
+            medLine_results = run_medline_query(query, read_min, read_max,
+                                     pol_min, pol_max, sub_min, sub_max)
+        except:
+            print "Medline search failed"
+            
         try:
             healthFinder_results = run_healthfinder_query(query, read_min, read_max,
                                  pol_min, pol_max, sub_min, sub_max)
