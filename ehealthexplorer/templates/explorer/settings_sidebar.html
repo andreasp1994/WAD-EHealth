@@ -12,8 +12,19 @@
             </br>
             <p class="text-primary"><strong>Username:</strong> <span id="username" class="to-edit form-control form-group">{{ user.username }}</span></p>
             <p class="text-primary"><strong>Email:</strong> <span id="email" class="to-edit form-control form-group">{{ user.email }}</span></p>
+
+            {% csrf_token %}
+            <input type="hidden" id="username" value="{{ user.username }}"/>
+            <input type="hidden" id="email" value="{{ user.email}}"/>
+
             <button id="edit" class="btn btn-default">Edit</button>
         </div>
+    </div>
+
+    <br />
+    <div>
+        <h2>Security settings:</h2>
+        <a href="{% url 'auth_password_change' %}"><p class="text-primary">Change password...</p></a>
     </div>
 </div>
 

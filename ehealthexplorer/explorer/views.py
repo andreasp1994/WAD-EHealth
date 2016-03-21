@@ -4,7 +4,7 @@ from explorer.medLine_search import run_medline_query
 from explorer.healthFinder_search import run_healthfinder_query
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import get_user
-from models import Category, Page
+from models import Category, Page, User
 from operator import itemgetter
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
@@ -192,6 +192,20 @@ def profile_sidebar(request):
 def settings_sidebar(request):
 
     context_dict = {}
+
+    if request.method == "POST":
+        task = request.POST['task']
+        if task == "AJAX_UPDATE":
+
+            username = request.POST['username']
+            email = request.POST['email']
+
+            u = User.objects.filter(username=request.user.username).first()
+            u.username = username
+            u.email = email
+            u.save()
+
+
     response = render(request, 'explorer/settings_sidebar.html', context_dict)
     return response
 
