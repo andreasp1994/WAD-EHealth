@@ -8,11 +8,11 @@ from explorer.models import Category, Page, User
 
 def populate():
 
-    jim = User.objects.get(username='jim')
-    jill = User.objects.get(username='jill')
-    joe = User.objects.get(username='joe')
+    jill = add_user('jill','jill@jill.com','jill')
+    bob = add_user('bob','bob@bob.com','bob')
+    joe = add_user('joe','joe@joe.com','joe')
 
-    flu_cat = add_cat(jim,'Flu')
+    flu_cat = add_cat(jill,'Flu',True)
     add_page(cat=flu_cat,
              title="Protections from Seasonal Flu",
              summary="Summary 1",
@@ -22,7 +22,8 @@ def populate():
              summary="Summary 2",
              url="http://www.nhs.uk/Conditions/Flu/Pages/Symptoms.aspx")
 
-    cancer_cat = add_cat(jill,'Cancer')
+
+    cancer_cat = add_cat(bob,'Cancer')
     add_page(cat=cancer_cat,
              title="Throat Cancer",
              summary="Summary 1",
@@ -31,6 +32,16 @@ def populate():
              title="Tests for Breast Cancer",
              summary="Summary2",
              url="http://www.cancerresearchuk.org/about-cancer/type/breast-cancer/diagnosis/breast-cancer-tests")
+
+    sclerosis_cat = add_cat(bob,'Sclerosis',True)
+    add_page(cat=sclerosis_cat,
+             title="Sclerosis topic",
+             summary="Summary of scleroris",
+             url="https://www.nlm.nih.gov/medlineplus/throatcancer.html")
+    add_page(cat=sclerosis_cat,
+             title="Symptoms of sclerosis",
+             summary="Summary2",
+             url="https://www.google.com")
 
     diabetes_cat = add_cat(joe,'Diabetes')
     add_page(cat=diabetes_cat,
@@ -42,6 +53,13 @@ def populate():
              summary="Summary1",
              url="https://www.nlm.nih.gov/medlineplus/diabetestype2.html")
 
+def add_user(user,email,passwd):
+    u = User(username=user,email=email)
+    u.set_password(passwd)
+    u.save()
+    return u
+
+
 def add_page(cat,title,summary,url):
     p = Page.objects.get_or_create(category=cat,title=title)[0]
     p.title = title
@@ -50,9 +68,10 @@ def add_page(cat,title,summary,url):
     p.save()
     return p
 
-def add_cat(user,name):
-    c = Category.objects.get_or_create(user=user)[0]
+def add_cat(user,name,shared=False):
+    c = Category.objects.get_or_create(user=user,name=name)[0]
     c.name = name
+    c.shared = shared
     c.save()
     return c
 

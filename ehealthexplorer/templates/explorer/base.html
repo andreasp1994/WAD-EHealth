@@ -49,7 +49,11 @@
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle glyphicon glyphicon-menu-hamburger"></a>
                         <ul class="dropdown-menu main-menu">
-                            <li><a href="#" data-link="{% url 'search_sidebar' %}">Search</a></li>
+
+                            {% block top_link_block %}
+                                <li><a href="#" data-link="{% url 'search_sidebar' %}">Search</a></li>
+                            {% endblock %}
+
                             <li class="divider"></li>
                             <li><a href="#" data-link="{% url 'search_categories'%}">Search Categories</a></li>
                             <li class="divider"></li>

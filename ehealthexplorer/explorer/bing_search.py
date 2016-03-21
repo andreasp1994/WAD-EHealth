@@ -4,7 +4,12 @@ from keys import BING_API_KEY
 from textstat.textstat import textstat
 from textblob import TextBlob
 
-def run_bing_query(search_terms):
+def run_bing_query(search_terms, read_min,
+                                 read_max,
+                                 pol_min,
+                                 pol_max,
+                                 sub_min,
+                                 sub_max):
     # Specify the base
     root_url = 'https://api.datamarket.azure.com/Bing/Search/'
     source = 'Web'
@@ -57,15 +62,22 @@ def run_bing_query(search_terms):
         for result in json_response['d']['results']:
             summary = result['Description']
             blobSummary = TextBlob(summary)
-            results.append({
-                'title':result['Title'],
-                'url':result['Url'],
-                'summary':result['Description'],
-                'read':textstat.flesch_reading_ease(summary),
-                'pola':("%.2f" % blobSummary.sentiment.polarity),
-                'subj':("%.2f" % blobSummary.sentiment.subjectivity),
-                'source':'Bing'
-                })
+            read = textstat.flesch_reading_ease(summary)
+            pola = float("%.2f" % blobSummary.sentiment.polarity)
+            subj = float("%.2f" % blobSummary.sentiment.subjectivity)
+            
+            
+            
+            if (read_min <= read <= read_max) and (pol_min <= pola <= pol_max) and (subj <= sub_max and subj >= sub_min):
+                results.append({
+                    'title':result['Title'],
+                    'url':result['Url'],
+                    'summary':result['Description'],
+                    'read':read,
+                    'pola':pola,
+                    'subj':subj,
+                    'source':'Bing'
+                    })
 
     except urllib2.URLError as e:
         print "Error when querying the Bing API: ", e
