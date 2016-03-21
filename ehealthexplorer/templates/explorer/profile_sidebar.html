@@ -1,3 +1,33 @@
+<script src="{{ STATIC_URL }}js/ajax-settings.js"></script>
+<link href="{{ STATIC_URL }}bootstrap-editable/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+<script src="{{ STATIC_URL }}bootstrap-editable/bootstrap3-editable/js/bootstrap-editable.js"></script>
 
-<img src="{{ STATIC_URL }}img/user.png" class="img-responsive userimg center-block">
+<div class="container-fluid">
+    <img src="{{ STATIC_URL }}prof-img/user.png" class="img-responsive userimg center-block">
+    </br>
+    <div class="span7 text-center">
+        <button class="btn btn-success">Change Avatar</button>
 
+        <div>
+            </br>
+            <p class="text-primary"><strong>Username:</strong> <span id="username" class="to-edit form-control form-group">{{ user.username }}</span></p>
+            <p class="text-primary"><strong>Email:</strong> <span id="email" class="to-edit form-control form-group">{{ user.email }}</span></p>
+
+            {% csrf_token %}
+            <input type="hidden" id="username" value="{{ user.username }}"/>
+            <input type="hidden" id="email" value="{{ user.email}}"/>
+
+            <button id="edit" class="btn btn-default">Edit</button>
+        </div>
+    </div>
+
+    <br />
+    <div>
+        <h2>Security settings:</h2>
+        <a href="{% url 'auth_password_change' %}"><p class="text-primary">Change password...</p></a>
+    </div>
+</div>
+
+<script>
+
+</script>

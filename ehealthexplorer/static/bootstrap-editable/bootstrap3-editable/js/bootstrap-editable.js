@@ -1745,7 +1745,7 @@ Makes editable any HTML element on the page. Applied as jQuery method.
             } else {
                 //detect empty
                 //for some inputs we need more smart check
-                //e.g. wysihtml5 may have <br>, <p></p>, <img>
+                //e.g. wysihtml5 may have <br>, <p></p>, <prof-img>
                 if(typeof(this.input.isEmpty) === 'function') {
                     this.isEmpty = this.input.isEmpty(this.$element);                    
                 } else {

@@ -3,5 +3,4 @@
  */
  setTimeout(function(){
         window.location = "/explorer/";
-}, 3000);
-
+}, 2000);

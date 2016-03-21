@@ -23,7 +23,7 @@
                 var username = $('input#username').val();
                 var email = $('input#email').val();
 
-                $.post("/explorer/sidebar/settings",
+                $.post("/explorer/sidebar/profile",
                 {
                     task:"AJAX_UPDATE",
                     username: username,

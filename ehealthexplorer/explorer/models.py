@@ -13,7 +13,7 @@ class Searcher(models.Model):
     surname = models.CharField(max_length=128,default="")
     username = models.CharField(max_length=128,default="")
     email = models.CharField(max_length=128,default="")
-    picture = models.ImageField(upload_to='profile_images', blank=True)
+    picture = models.ImageField(upload_to='profile_images',default='/static/prof-img/user.png')
 
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):

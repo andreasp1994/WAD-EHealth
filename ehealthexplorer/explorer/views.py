@@ -8,6 +8,8 @@ from models import Category, Page, User
 from operator import itemgetter
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import logout, authenticate, login
 
 @csrf_exempt
 def index(request):
@@ -19,7 +21,17 @@ def index(request):
                     'Singulair','Crestor','Actos']
     context_dict['medicines'] = medicine_list
 
-    response = render(request,'explorer/index.html', context_dict )
+    treatments_procedures_list = ['CAT Scan','Chemotherapy','Colonoscopy','Cortisone Injection','Creatinine Blood Test',
+                         'Electrolytes','Liver Blood Test','MRI Scan','Thyroid Blood Tests','Total Knee Replacement','Ultrasound']
+
+    context_dict['treatandproc'] = treatments_procedures_list
+
+    conditions = ['Kidney Infection','Diabetes','Back Pain','Constipation','Measles','Cancer',
+                  'Common Cold']
+
+    context_dict['conditions'] = conditions
+
+    response = render(request,'explorer/index.html', context_dict)
     return response
 
 @csrf_exempt
@@ -162,7 +174,6 @@ def favourites_sidebar(request):
 
     return response
 
-@login_required
 def search_sidebar(request):
 
     context_dict={}
@@ -176,20 +187,19 @@ def search_sidebar(request):
                          'Electrolytes','Lap Band Surgery (Gastric Banding)','Liver Blood Test','MRI Scan',
                          'Thyroid Blood Tests','Total Hip Replacement','Total Knee Replacement','Tuberculosis Skin Test (PPD Skin Test)',
                          'Ultrasound']
+
     context_dict['treatandproc'] = treatments_procedures_list
+
+    conditions = ['Kidney Infection','Diabetes','Back Pain','Constipation','Measles','Cancer',
+                  'Common Cold']
+
+    context_dict['conditions'] = conditions
 
     response = render(request, 'explorer/search_sidebar.html', context_dict)
     return response
 
 @login_required
 def profile_sidebar(request):
-
-    context_dict ={}
-    response = render(request, 'explorer/profile_sidebar.html', context_dict)
-    return response
-
-@login_required
-def settings_sidebar(request):
 
     context_dict = {}
 
@@ -206,7 +216,7 @@ def settings_sidebar(request):
             u.save()
 
 
-    response = render(request, 'explorer/settings_sidebar.html', context_dict)
+    response = render(request, 'explorer/profile_sidebar.html', context_dict)
     return response
 
 
@@ -233,3 +243,21 @@ def search_categories(request):
 
     response = render(request, 'explorer/search_categories.html',context_dict)
     return response
+
+def user_login(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+        if user:
+            if user.is_active:
+                login(request,user)
+                return HttpResponseRedirect('/explorer/')
+            else:
+                return HttpResponse("Your Explorer account is disabled.")
+        else:
+            return HttpResponse("<strong>Invalid login details supplied</strong><script src='/static/js/redirect.js'></script>")
+    else:
+        return render(request, 'registration/login.html',{})

@@ -1,4 +1,4 @@
-<form class="form-signin" role="form" method="post" action="{% url 'auth_login' %}" enctype="multipart/form-data">
+<form class="form-signin" role="form" method="post" action="{% url 'login' %}" enctype="multipart/form-data">
     {% csrf_token %}
 
     <h2 class="form-signin-heading">Please sign in</h2>
@@ -8,5 +8,6 @@
     <p>Password:</p>
     <input type="password" class="form-control" placeholder="Password" id="id_password" name="password"  required />
     <input name="next" type="hidden" value="/explorer/">
+    </br>
     <button class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" >Sign in</button>
 </form>

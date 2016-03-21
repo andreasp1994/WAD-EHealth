@@ -14,7 +14,7 @@
         <ul class="predefined-search-tabs">
             <li><a  href="#medicines" data-toggle="tab">Medicines</a></li>
             <li class="active"><a href="#conditions" data-toggle="tab">Conditions</a></li>
-            <li><a href="#symptoms" data-toggle="tab">Symptoms</a></li>
+            <li><a href="#treatments" data-toggle="tab">Treatments</a></li>
         </ul>
         </div>
 
@@ -26,26 +26,23 @@
                 <div class="tab-content">
                     <div class="tab-pane" id="medicines">
                         <ul class="predefined-search-tabs">
-                            {% for tnp in treatandproc %}
-                                <li><a  href="#">{{ tnp }}</a></li>
+                            {% for med in medicines %}
+                                <li><a  href="#">{{ med }}</a></li>
                             {% endfor %}
-
                         </ul>
                     </div>
                     <div class="tab-pane active" id="conditions">
                         <ul class="predefined-search-tabs">
-
-                            {% for med in medicines %}
-                                <li><a  href="#">{{ med }}</a></li>
+                            {% for c in conditions %}
+                                <li><a  href="#">{{ c }}</a></li>
                             {% endfor %}
-
                         </ul>
                     </div>
-					<div class="tab-pane" id="symptoms">
+					<div class="tab-pane" id="treatments">
 						<ul class="predefined-search-tabs">
-							<li><a href="#">Fever</a></li>
-							<li><a href="#">Rash</a></li>
-							<li><a href="#">Pain</a></li>
+                            {% for tnp in treatandproc %}
+                                <li><a  href="#">{{ tnp }}</a></li>
+                            {% endfor %}
 						</ul>
 					</div>
                     <div class="tab-pane" id="messages">Messages Tab.</div>

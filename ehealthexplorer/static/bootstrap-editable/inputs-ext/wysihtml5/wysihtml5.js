@@ -95,7 +95,7 @@ $(function(){
             } else if($.trim($element.text()) !== '') {
                 return false;
             } else {
-                //e.g. '<img>', '<br>', '<p></p>'
+                //e.g. '<prof-img>', '<br>', '<p></p>'
                 return !$element.height() || !$element.width();
             } 
         }
