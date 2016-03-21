@@ -60,9 +60,8 @@
                             {% if user.is_authenticated %}
                                 <li><a href="#" data-link="{%  url 'favourites_sidebar' %}">Favourites</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#" data-link="{% url 'profile_sidebar' %}">MyProfile</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#" data-link="{% url 'settings_sidebar' %}">Settings</a></li>
+                                <li><a href="#" data-link="{% url 'settings_sidebar' %}">MyProfile</a></li>
+
                                 <li class="divider"></li>
                                 <li><a href="{% url 'auth_logout' %}?next=/explorer/">Log out</a></li>
                             {% else %}

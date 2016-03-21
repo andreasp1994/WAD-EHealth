@@ -17,6 +17,14 @@ def index(request):
 
     medicine_list = ['Lipitor','Nexium','Plavix','Advair','Abilify','Seroquel',
                     'Singulair','Crestor','Actos']
+    conditions_list =['Kidney Infection','Diabetes','Back Pain','Constipation','Measles','Cancer','Common Cold']
+    context_dict['conditions'] = conditions_list
+
+    treatments_list =['Chemotherapy','Colonoscopy','Cortisone Injection','Creatinine Blood Test','Electrolytes','Liver Blood Test','MRI Scan']
+    context_dict['treatments'] = treatments_list
+
+
+
     context_dict['medicines'] = medicine_list
 
     response = render(request,'explorer/index.html', context_dict )
@@ -171,12 +179,12 @@ def search_sidebar(request):
                     'Singulair','Crestor','Actos']
     context_dict['medicines'] = medicine_list
 
-    treatments_procedures_list = ['Antinuclear Antibody Test','CAT Scan','Chemotherapy','Colonoscopy','Complete Blood Count',
-                         'Coronary Artery Bypass Graft (CABG)','Cortisone Injection','Creatinine Blood Test',
-                         'Electrolytes','Lap Band Surgery (Gastric Banding)','Liver Blood Test','MRI Scan',
-                         'Thyroid Blood Tests','Total Hip Replacement','Total Knee Replacement','Tuberculosis Skin Test (PPD Skin Test)',
-                         'Ultrasound']
-    context_dict['treatandproc'] = treatments_procedures_list
+
+    conditions_list =['Kidney Infection','Diabetes','Back Pain','Constipation','Measles','Cancer','Common Cold']
+    context_dict['conditions'] = conditions_list
+
+    treatments_list =['Chemotherapy','Colonoscopy','Cortisone Injection','Creatinine Blood Test','Electrolytes','Liver Blood Test','MRI Scan']
+    context_dict['treatments'] = treatments_list
 
     response = render(request, 'explorer/search_sidebar.html', context_dict)
     return response
