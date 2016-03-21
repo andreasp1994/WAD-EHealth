@@ -20,11 +20,11 @@ $(document).ready(function () {
 
     var polarity = document.getElementById('polarity');
     noUiSlider.create(polarity, {
-        start: [0, 100],
+        start: [-1, 1],
         connect: true,
         range: {
-            'min': 0,
-            'max': 100
+            'min': -1,
+            'max': 1
         }
     });
     var polSnapValues = [
@@ -36,11 +36,11 @@ $(document).ready(function () {
 
     var subjectivity = document.getElementById('subjectivity');
     noUiSlider.create(subjectivity, {
-        start: [0, 100],
+        start: [0, 1],
         connect: true,
         range: {
             'min': 0,
-            'max': 100
+            'max': 1
         }
     });
 

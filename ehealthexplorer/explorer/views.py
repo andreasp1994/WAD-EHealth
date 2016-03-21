@@ -41,7 +41,7 @@ def results(request):
                   'bing':bing_results,
                   'medLine':medLine_results,
                   'healthFinder':healthFinder_results 
-                 } ## Placeholder until search function can be implemented
+				  }
 
     if request.user.is_authenticated():
         category_list = Category.objects.filter(user=get_user(request))
