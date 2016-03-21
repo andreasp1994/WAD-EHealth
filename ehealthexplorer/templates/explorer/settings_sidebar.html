@@ -3,6 +3,7 @@
 <script src="{{ STATIC_URL }}bootstrap-editable/bootstrap3-editable/js/bootstrap-editable.js"></script>
 
 <div class="container-fluid">
+
     <img src="{{ STATIC_URL }}img/user.png" class="img-responsive userimg center-block">
     </br>
     <div class="span7 text-center">
@@ -16,7 +17,7 @@
             {% csrf_token %}
             <input type="hidden" id="username" value="{{ user.username }}"/>
             <input type="hidden" id="email" value="{{ user.email}}"/>
-
+            <p> {{ user.picture }}</p>
             <button id="edit" class="btn btn-default">Edit</button>
         </div>
     </div>

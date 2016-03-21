@@ -190,7 +190,6 @@ def profile_sidebar(request):
 
 @login_required
 def settings_sidebar(request):
-
     context_dict = {}
 
     if request.method == "POST":
@@ -208,7 +207,6 @@ def settings_sidebar(request):
 
     response = render(request, 'explorer/settings_sidebar.html', context_dict)
     return response
-
 
 def search_categories(request):
 

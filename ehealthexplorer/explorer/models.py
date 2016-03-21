@@ -9,11 +9,9 @@ class Searcher(models.Model):
     user = models.OneToOneField(User)
 
     # The additional attributes we wish to include.
-    name = models.CharField(max_length=128,default="")
-    surname = models.CharField(max_length=128,default="")
-    username = models.CharField(max_length=128,default="")
-    email = models.CharField(max_length=128,default="")
-    picture = models.ImageField(upload_to='profile_images', blank=True)
+    # name = models.CharField(max_length=128,default="")
+    # surname = models.CharField(max_length=128,default="")
+    picture = models.CharField(max_length=100, default='/static/profile_images/default.png')
 
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):

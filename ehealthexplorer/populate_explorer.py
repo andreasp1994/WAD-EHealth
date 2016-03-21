@@ -59,7 +59,6 @@ def add_user(user,email,passwd):
     u.save()
     return u
 
-
 def add_page(cat,title,summary,url):
     p = Page.objects.get_or_create(category=cat,title=title)[0]
     p.title = title
