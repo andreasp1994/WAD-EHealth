@@ -1,4 +1,4 @@
-## Synopsis
+# Synopsis
 
 Web Application Development Course - Group Project
 
@@ -11,7 +11,7 @@ http://healthfinder.gov/developer/How_to_Use.aspx <br />
 https://www.nlm.nih.gov/medlineplus/webservices.html <br />
 https://datamarket.azure.com/dataset/bing/search <br />
 
-## Installation
+# Installation
 
 Below you can find instruction to install and run the application on your local machine
 
@@ -38,7 +38,7 @@ http://127.0.0.1/explorer/
 
 NOTE: Keys are required for Bing and HealthFinder, app is set up to read from keys.py file in the explorer folder
 
-## Population Script
+# Population Script
 
 Inside the root directory of the application there is a population script which populates some dummy data into the application for demonstration purposes.
 Below there are details about the data populated.
@@ -65,7 +65,7 @@ Bob has two categories called 'Cancer' and 'Sclerosis'. Both of them contain two
 Joe:
 Joe has one category called Diabetes and contains two pages.
 
-## Contributors
+# Contributors
 
 2079310R: Emily Raine, 2079310R
 
@@ -75,11 +75,11 @@ andreasp1994: Antreas Pogiatzis, 2140845P
 
 OrlinODachev: Orlin Dachev, 2131228D 
 
-## Bugs and Fixes
+# Bugs and Fixes
 
-#24.03.2016 - Bug: 
+###24.03.2016 - Bug: 
 Some topics cannot be saved in the user defined categories.
-#update: 
+###update: 
 Problem fixed. There was a bug in the save-to.js file and to results.html template. 
 Save functionality now works properly.
 
