@@ -41,7 +41,7 @@
                             {% if categories %}
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     {% for category in categories %}
-                                        <li id="cat-li" data-cat-id="{{ category.id }}" role="presentation"><a data-target="#" role="menuitem" tabindex="-1">{{ category.name }}</a></li>
+                                        <li class="cat-li" data-cat-id="{{ category.id }}" role="presentation"><a data-target="#" role="menuitem" tabindex="-1">{{ category.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             {% else %}
@@ -78,7 +78,7 @@
                             {% if categories %}
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     {% for category in categories %}
-                                        <li id="cat-li" data-cat-id="{{ category.id }}" role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
+                                        <li class="cat-li" data-cat-id="{{ category.id }}"  data-cat-id="{{ category.id }}" role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             {% else %}
@@ -116,7 +116,7 @@
                             {% if categories %}
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     {% for category in categories %}
-                                        <li id="cat-li" role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
+                                        <li class="cat-li" data-cat-id="{{ category.id }}"  role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             {% else %}
@@ -154,7 +154,7 @@
                             {% if categories %}
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     {% for category in categories %}
-                                        <li id="cat-li" role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
+                                        <li class="cat-li" data-cat-id="{{ category.id }}" role="presentation"><a role="menuitem" tabindex="-1">{{ category.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             {% else %}

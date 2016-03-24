@@ -10,5 +10,5 @@ urlpatterns = patterns('',
         url(r'^sidebar/results/$', views.results_sidebar, name='results_sidebar'),
         url(r'^sidebar/settings', views.settings_sidebar, name='settings_sidebar'),
         url(r'^sidebar/shared/$', views.search_categories, name='search_categories'),
-
+        url(r'^sidebar/about/$', views.about_sidebar,name="about_sidebar"),
 )

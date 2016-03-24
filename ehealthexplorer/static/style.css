@@ -482,3 +482,7 @@ Results styling
 #cat-li {
     cursor: pointer;
 }
+
+.about-container{
+    padding: 20px;
+}

@@ -170,7 +170,6 @@ def favourites_sidebar(request):
 
     return response
 
-@login_required
 def search_sidebar(request):
 
     context_dict={}
@@ -238,4 +237,9 @@ def search_categories(request):
     context_dict['shared_categories']=shared_categories
 
     response = render(request, 'explorer/search_categories.html',context_dict)
+    return response
+
+def about_sidebar(request):
+    context_dict = {}
+    response = render(request, 'explorer/about_sidebar.html',context_dict)
     return response
