@@ -7,9 +7,9 @@ People using the application can self-diagnose, i.e. given some symptoms find ou
 
 The API’s for the federated search are:
 
-http://healthfinder.gov/developer/How_to_Use.aspx
-https://www.nlm.nih.gov/medlineplus/webservices.html
-https://datamarket.azure.com/dataset/bing/search
+http://healthfinder.gov/developer/How_to_Use.aspx <br />
+https://www.nlm.nih.gov/medlineplus/webservices.html <br />
+https://datamarket.azure.com/dataset/bing/search <br />
 
 ## Installation
 
@@ -75,6 +75,13 @@ andreasp1994: Antreas Pogiatzis, 2140845P
 
 OrlinODachev: Orlin Dachev, 2131228D 
 
+## Bugs and Fixes
+
+#24.03.2016 - Bug: 
+Some topics cannot be saved in the user defined categories.
+#update: 
+Problem fixed. There was a bug in the save-to.js file and to results.html template. 
+Save functionality now works properly.
 
 
 
